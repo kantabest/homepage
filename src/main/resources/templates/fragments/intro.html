@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+    <div th:fragment="intro">
+
+        <!--==========================
+            Intro Section
+        ============================-->
+        <section id="intro">
+            <div class="intro-container">
+            <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
+
+                <ol class="carousel-indicators"></ol>
+
+                <div class="carousel-inner" role="listbox">
+
+                <div class="carousel-item active" >
+                    <div class="carousel-background"><img th:src="@{/img/intro/lake.jpg}" alt=""></div>
+                    <div class="carousel-container">
+                    <div class="carousel-content">
+                        <h2><span th:text="${msgMap.get('INTRO_Text_A001_Title')}"></span></h2>
+                        <p><span th:text="${msgMap.get('INTRO_Text_A001_SubTitle')}"></span></p>
+                        <!-- <a href="#featured-services" class="btn-get-started scrollto">Get Started</a> -->
+                    </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="carousel-background"><img th:src="@{/img/intro/lab_1.jpg}" alt=""></div>
+                    <div class="carousel-container">
+                    <div class="carousel-content">
+                        <h2><span th:text="${msgMap.get('INTRO_Text_A002_Title')}"></span></h2>
+                        <p><span th:text="${msgMap.get('INTRO_Text_A002_SubTitle')}"></span></p>
+                        <!-- <a href="#featured-services" class="btn-get-started scrollto">Get Started</a> -->
+                    </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="carousel-background"><img th:src="@{/img/intro/IMG_0089.jpg}" alt=""></div>
+                    <div class="carousel-container">
+                    <div class="carousel-content">
+                        <h2><span th:text="${msgMap.get('INTRO_Text_A003_Title')}"></span></h2>
+                        <p><span th:text="${msgMap.get('INTRO_Text_A003_SubTitle')}"></span></p>
+                        <!-- <a href="#featured-services" class="btn-get-started scrollto">Get Started</a> -->
+                    </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="carousel-background"><img th:src="@{/img/intro/IMG_0088.jpg}" alt=""></div>
+                    <div class="carousel-container">
+                    <div class="carousel-content">
+                        <h2><span th:text="${msgMap.get('INTRO_Text_A004_Title')}"></span></h2>
+                        <p><span th:text="${msgMap.get('INTRO_Text_A004_SubTitle')}"></span></p>
+                        <!-- <a href="#featured-services" class="btn-get-started scrollto">Get Started</a> -->
+                    </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item">
+                    <div class="carousel-video-inner">
+                        <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" width="100%" th:src="@{'https://www.youtube.com/embed/qtSVn6GRS38'}"></iframe>
+                        </div>              
+                    
+                    </div>          
+                </div>          
+
+            </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

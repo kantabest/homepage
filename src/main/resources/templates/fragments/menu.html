@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<script type="text/javascript">
+
+	function ChangeSearchText()
+	{
+
+		var value = $("#menu_search_text").val();
+		var table = $('#dataTable').DataTable();
+
+        table.search(value).draw();
+        
+	}
+	
+
+	$(document).ready(function(){
+	       $("#menu_search_text").keypress(function (e) {
+	        if (e.which == 13){
+				location.href="index.jsp?langType=" + $("#langType").val() +"#searchProduct";
+	        }
+	    });
+	});
+
+
+</script>
+
+  <body>
+    <div th:fragment="menu">
+
+        <!-- <input name="langType" th:value="${langType}"> -->
+        <!-- <input name="langType" th:value="${msgMap.get('MENU_About')}"> -->
+
+        <div class="container-fluid">
+            <div id="logo">      
+              <a th:href="@{#intro}"><img th:src="@{/img/Logo_CALS3.png}" width="25%" height="25%" alt="" title=""/></a>
+            </div>
+            
+            
+            <nav id="nav-menu-container">
+              <ul class="nav-menu">
+                <li><a th:href="@{/views/index#intro}" style="color: blue;" th:text="home"></a></li>
+                <li><a th:href="@{/views/index#about}" th:text="${msgMap.get('MENU_About')}"></a></li>
+                <li><a th:href="@{/views/index#product}" th:text="${msgMap.get('MENU_Product')}"></a></li>
+                <li><a th:href="@{/views/index#machinesLabs}" th:text="${msgMap.get('MENU_Machines_labs')}"></a></li>
+                <li><a th:href="@{/views/index#contact}" th:text="${msgMap.get('MENU_Contact')}"></a></li>
+                 <li><a th:href="@{/views/index#searchProduct}"><span th:text="${msgMap.get('MENU_Search')}"><i class="ionicons ion-android-search"></i></span></a></li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+
+                <li><a th:href="@{/views/index/} + 'KR'">KR</a>
+                    <a th:href="@{/views/index/} + 'EN'">EN</a>
+                    <a th:href="@{/views/index/} + 'CN'">CN</a>
+                </li>
+                
+              </ul>
+            </nav> <!-- #nav-menu-container -->
+          </div>
+    </div>
+  </body>
+  
+</html>
+
+

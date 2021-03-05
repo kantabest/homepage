@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.calscorp.homepage.service.HomepageMapper">
+
+	<select id="selectCateList" parameterType="String" resultType="java.util.HashMap">
+	<![CDATA[ 
+		select a.cate_no
+		      ,CASE WHEN #{langType} = 'EN' THEN a.cate_nm_en
+		            WHEN #{langType} = 'CN' THEN a.cate_nm_cn
+		            WHEN #{langType} = 'KR' THEN a.cate_nm
+		            ELSE a.cate_nm 
+		            END as cate_nm  
+		       
+		  from SDC100v a
+		  where a.use_yn = '1'
+		  
+		     
+	]]>
+	</select>	
+	
+	<select id="selectFieldList" parameterType="java.util.HashMap" resultType="field">
+	<![CDATA[ 
+		select a.field_no		      
+      		  ,CASE WHEN #{langType} = 'EN' THEN a.field_nm_en
+					WHEN #{langType} = 'CN' THEN a.field_nm_cn
+    				WHEN #{langType} = 'KR' THEN a.field_nm
+    		   		ELSE a.field_nm 
+				    END as field_nm
+		      
+			 ,(select ISNULL(count(itm_cd),0) from SDC110V aa where a.cate_no = aa.cate_no and a.field_no = aa.field_no and aa.use_yn = '1') as itm_count 
+		  from SDC101v a
+		  where a.use_yn = '1'
+		    and cate_no = #{cate_no}
+			group by cate_no, field_no, field_nm, field_nm_en, field_nm_cn
+			order by a.field_nm
+		     
+	]]>
+	</select>	
+	
+	<select id="selectFieldItemList" parameterType="java.util.HashMap" resultType="fieldItem">
+	<![CDATA[
+			{ call SDC110_GETDATA (#{cate_no}, #{langType})} 
+
+	]]>
+	</select>
+	
+	<select id="selectItemSpecList" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+	<![CDATA[ 
+		select a.itm_id, a.itm_nm, a.spec_no
+			  ,CASE WHEN #{langType} = 'EN' THEN spec_nm_en
+					WHEN #{langType} = 'CN' THEN spec_nm_cn
+    				WHEN #{langType} = 'KR' THEN spec_nm
+    		   		ELSE spec_nm 
+				    END as spec_nm
+			  ,a.spec_value
+				
+				
+			   ,a.rmks, a.use_yn, a.mid, a.mnm, a.mdt, a.use_master
+		  from sdc111v a
+		 where a.itm_id = #{itm_id}
+		   and a.use_yn = '1'
+	]]>
+	</select>			
+		
+	<select id="selectMsgList" parameterType="String" resultType="java.util.HashMap">
+	<![CDATA[ 
+		SELECT  msg_code as msg_key
+				,CASE #{langType} 
+				 WHEN 'EN' then EN
+				 WHEN 'CN' then CN
+				 ELSE KR
+				 END as msg_value
+		FROM SDC199V		
+	]]>
+	</select>		
+		
+	<select id="selectHistoryList" parameterType="String" resultType="java.util.HashMap">
+	<![CDATA[ 
+	
+	  select history_no, convert(varchar(4), history_dt, 120) as history_dt, history_subject, history_content, use_yn			  
+		FROM SDC180V		
+		where lang_cd = CASE #{langType}
+		                WHEN 'EN' THEN  'SC220200'
+		                WHEN 'CN' THEN  'SC220300'
+		                ELSE 'SC220100' 
+                        END 
+		and use_yn = '1'		                
+		order by history_dt desc, history_no		                
+	]]>
+	</select>
+	
+	<select id="selectContentsCodeList" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+	<![CDATA[ 
+	
+	  select file_id, file_nm
+	  		 ,CASE WHEN #{langType} = 'KR' THEN title
+	  		       WHEN #{langType} = 'EN' THEN title_en
+	  		       WHEN #{langType} = 'CN' THEN title_cn
+	  		       ELSE title 
+                   END as title 
+
+	  		 ,CASE WHEN #{langType} = 'KR' THEN sub_title
+	  		       WHEN #{langType} = 'EN' THEN sub_title_en
+	  		       WHEN #{langType} = 'CN' THEN sub_title_cn
+	  		       ELSE sub_title 
+                   END as sub_title	  		      
+	  		       
+	         , redirect_url
+	    from SDC112V
+	    
+	    where contents_cd = #{contents_cd}
+	      and isvisible = '1'
+	      
+	      order by visible_no, sq_no		                
+	]]>
+	</select>
+	
+	<select id="selectContactList" parameterType="String" resultType="java.util.HashMap">
+	<![CDATA[ 
+			SELECT  contact_no, bs_cd, lang_cd, sq, address, phone, email, ggmap, ment, use_yn, mid, mdt
+			FROM    SDC114V
+			WHERE lang_cd = CASE #{langType}
+                            WHEN 'EN' THEN  'SC220200'
+                            WHEN 'CN' THEN  'SC220300'
+                            ELSE 'SC220100' END  	
+	]]>
+	</select>		
+	
+	<select id="selectFooterList" parameterType="String" resultType="java.util.HashMap">
+	<![CDATA[ 
+			SELECT  contact_no, bs_cd, lang_cd, sq, address, phone, email, ggmap, ment, use_yn, mid, mdt
+			FROM    SDC114V
+			WHERE lang_cd = CASE #{langType}
+                WHEN 'EN' THEN  'SC220200'
+                WHEN 'CN' THEN  'SC220300'
+                ELSE 'SC220100' END  	
+	]]>
+	</select>			
+	
+	<select id="selectblog_Count" parameterType="java.util.HashMap" resultType="Integer">
+	<![CDATA[ 
+	
+	select count(*)			
+				from HRA100 a  left outer join HRA200 b on a.dept_cd = b.dept_cd
+							   left outer join HRA110 c on a.emp_no = c.emp_no
+							   left outer join BCA200 d on a.high_bc = d.base_cd 
+							   left outer join hra150 f on a.emp_no = f.emp_no 
+							   join dbo.fnDepttree(#{dept_cd},'1',1) e on e.dept_cd = a.dept_cd
+				where  1 = 1   
+				and a.stat_bc IN ('HR125100','HR125200')
+				and b.use_yn  ='1'
+
+
+            <if test='dept_cd != "1000000"'>
+                and a.dept_cd = #{dept_cd}
+            </if>
+
+	]]>					
+     	
+	</select>
+		
+	<select id="selectFileSearchList" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+	<![CDATA[ 
+			select a.contents_no
+					,a.itm_id
+					,a.itm_cd
+					,a.itm_nm
+					,a.file_id
+					,a.file_tp
+					,a.file_nm
+					,a.file_size
+					,a.title
+					,a.converted_text
+					,a.converted_dt
+					,a.lang_bc
+					,a.field_no
+					,ISNULL(a.cate_no, 99999) as cate_no					
+			  		,ISNULL(CASE WHEN #{langType} = 'KR' THEN a.field_nm
+			  		             WHEN #{langType} = 'EN' THEN a.field_nm_en
+			  		             WHEN #{langType} = 'CN' THEN a.field_nm_cn
+			  		             ELSE a.field_nm END, 'No Defined') as field_nm					
+			  		      
+			  		,ISNULL(CASE WHEN #{langType} = 'KR' THEN a.cate_nm
+			  		             WHEN #{langType} = 'EN' THEN a.cate_nm_en
+			  		             WHEN #{langType} = 'CN' THEN a.cate_nm_cn
+			  		             ELSE a.cate_nm END, 'No Defined') as cate_nm	  		      
+					
+			  from SDC112V_SEARCH a
+			  where a.lang_bc = CASE WHEN #{langType} = 'KR' THEN 'SC220100'
+			                         ELSE 'SC220200'
+			                         END
+			                      
+		                
+	]]>
+	
+	</select>	
+	
+</mapper>
