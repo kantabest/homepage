@@ -40,12 +40,12 @@
             
             <nav id="nav-menu-container">
               <ul class="nav-menu">
-                <li><a th:href="@{/views/index#intro}" style="color: blue;" th:text="home"></a></li>
-                <li><a th:href="@{/views/index#about}" th:text="${msgMap.get('MENU_About')}"></a></li>
-                <li><a th:href="@{/views/index#product}" th:text="${msgMap.get('MENU_Product')}"></a></li>
-                <li><a th:href="@{/views/index#machinesLabs}" th:text="${msgMap.get('MENU_Machines_labs')}"></a></li>
-                <li><a th:href="@{/views/index#contact}" th:text="${msgMap.get('MENU_Contact')}"></a></li>
-                 <li><a th:href="@{/views/index#searchProduct}"><span th:text="${msgMap.get('MENU_Search')}"><i class="ionicons ion-android-search"></i></span></a></li>
+                <li><a th:href="@{#intro}" style="color: blue;" th:text="home"></a></li>
+                <li><a th:href="@{#about}" th:text="${msgMap.get('MENU_About')}"></a></li>
+                <li><a th:href="@{#product}" th:text="${msgMap.get('MENU_Product')}"></a></li>
+                <li><a th:href="@{#machinesLabs}" th:text="${msgMap.get('MENU_Machines_labs')}"></a></li>
+                <li><a th:href="@{#contact}" th:text="${msgMap.get('MENU_Contact')}"></a></li>
+                <li><a th:href="@{#searchProduct}"><span th:text="${msgMap.get('MENU_Search')}"><i class="ionicons ion-android-search"></i></span></a></li>
                 <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
 
                 <li><a th:href="@{/views/index/} + 'KR'">KR</a>

@@ -7,13 +7,10 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-
-public class content { 
-    
-    String fileId;
-    String fileNm;
-    String title;
-    String subTitle;
-    String redirectUrl;
+public class history {
+    String historyNo;
+    String historyDt;
+    String historySubject;
+    String historyContent;
+    String useYn;
 }
-

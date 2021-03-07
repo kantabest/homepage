@@ -8,12 +8,12 @@ import lombok.ToString;
 @Setter
 @ToString
 
-public class content { 
+public class specification { 
     
-    String fileId;
-    String fileNm;
-    String title;
-    String subTitle;
-    String redirectUrl;
+    int itmId;
+    String itmNm;
+    String specNo;
+    String specNm;
+    String specValue;
 }
 

@@ -14,14 +14,14 @@
         <div class="row">
             <div class="col-lg-2 col-md-6 wow fadeInUp" th:each="machine, i: ${machinesList}" data-wow-delay="0.1s">
                 <div class="member">
-                    <img th:src="@{'https://cals-corp.com/link/sdc112/'} + ${machine.fileId}" class="img-fluid" alt="" />                  
+                    <img th:src="@{'/link/sdc112/'} + ${machine.fileId}" class="img-fluid" alt="" />                  
                     <div class="member-info">
                       <div class="member-info-content">
                         <h4 th:text="${machine.title}"></h4>
                         <span th:text="${machine.subTitle}"></span>
                     
                         <div class="social">
-                            <a th:href="@{'https://cals-corp.com/link/sdc112/'} + ${machine.fileId}" download = "${machine.file_nm}" class="link-details" title="DownLoad File"><i class="ion ion-android-open"></i></a>
+                            <a th:href="@{'/link/sdc112/'} + ${machine.fileId}" th:attr="download=${machine.fileNm}" class="link-details" title="DownLoad File"><i class="ion ion-android-open"></i></a>
 
                               <div th:if="${machine.redirectUrl} == ''">
                                 <!-- 		                    <a href=""><i class="fa fa-twitter"></i></a> -->
@@ -34,7 +34,7 @@
                                 <a th:href="${machine.redirectUrl" target="_blank"><i class="fa fa-twitter"></i></a>
                                 <a th:href="${machine.redirectUrl" target="_blank"><i class="fa fa-facebook"></i></a>
                                 <a th:href="${machine.redirectUrl" target="_blank"><i class="fa fa-google-plus"></i></a>
-                                <a th:href="@{'https://cals-corp.com/link/sdc112/'} + ${machine.fileId}" download = ${machine.fileNm}><i class="fa fa-download"></i></a>
+                                <a th:href="@{'/link/sdc112/'} + ${machine.fileId}" th:attr="download=${machine.fileNm}"><i class="fa fa-download"></i></a>
                               </div>                          
                         </div>
                       </div>

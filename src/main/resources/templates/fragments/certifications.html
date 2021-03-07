@@ -14,14 +14,21 @@
         <div class="row">
             <div class="col-lg-2 col-md-6 wow fadeInUp" th:each="certi, i: ${certiList}" data-wow-delay="0.1s">
                 <div class="member">
-                    <img th:src="@{'https://cals-corp.com/link/sdc112/'} + ${certi.fileId}" class="img-fluid" alt="" />                  
+                    <img th:src="@{'/link/sdc112/'} + ${certi.fileId}" class="img-fluid" alt="" />                  
                     <div class="member-info">
                       <div class="member-info-content">
                         <h4 th:text="${certi.title}"></h4>
                         <span th:text="${certi.subTitle}"></span>
                     
                         <div class="social">
-                            <a th:href="@{'https://cals-corp.com/link/sdc112/'} + ${certi.fileId}" download = "${certi.file_nm}" class="link-details" title="DownLoad File"><i class="ion ion-android-open"></i></a>
+
+                          <!-- <td><a th:href="@{'/link/sdc112/' + ${file.file_id}}"  th:attr="download=${file.file_nm}" class="link-details" title="DownLoad File">
+                            <i class="ion ion-android-open"></i></a></td>
+                        <td><a th:href="@{'/link/sdc112/' + ${file.file_id}}"  th:target="_blank" class="link-details" title="Preview File" >
+                            <i class="icon ion-ios-paper-outline"></i></a>	
+                        </td>      -->
+
+                            <a th:href="@{'/link/sdc112/'} + ${certi.fileId}" th:attr="download=${certi.fileNm}" class="link-details" title="DownLoad File"><i class="ion ion-android-open"></i></a>
 
                               <div th:if="${certi.redirectUrl} == ''">
                                 <!-- 		                    <a href=""><i class="fa fa-twitter"></i></a> -->
@@ -34,7 +41,7 @@
                                 <a th:href="${certi.redirectUrl" target="_blank"><i class="fa fa-twitter"></i></a>
                                 <a th:href="${certi.redirectUrl" target="_blank"><i class="fa fa-facebook"></i></a>
                                 <a th:href="${certi.redirectUrl" target="_blank"><i class="fa fa-google-plus"></i></a>
-                                <a th:href="@{'https://cals-corp.com/link/sdc112/'} + ${certi.fileId}" download = ${certi.fileNm}><i class="fa fa-download"></i></a>
+                                <a th:href="@{'/link/sdc112/'} + ${certi.fileId}" th:attr="download=${certi.fileNm}" ><i class="fa fa-download"></i></a>
                               </div>                          
                         </div>
                       </div>

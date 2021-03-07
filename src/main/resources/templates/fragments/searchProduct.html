@@ -51,11 +51,16 @@
                             <td><span th:text="${file.itm_nm}"></span></td>
                             <td class="d-none"><span th:text="${file.file_size}"></span></td>
                             <td class="d-none"><span th:text="${file.converted_text}"></span></td>
-                            <td><a th:href="@{'https://cals-corp.com/link/sdc112/' + ${file.file_id}}"  th:attr="download=${file.file_nm}" class="link-details" title="DownLoad File">
+                            <td><a th:href="@{'/link/sdc112/' + ${file.file_id}}"  th:attr="download=${file.file_nm}" class="link-details" title="DownLoad File">
                                 <i class="ion ion-android-open"></i></a></td>
-                            <td><a th:href="@{'https://cals-corp.com/link/sdc112/' + ${file.file_id}}"  th:target="_blank" class="link-details" title="Preview File" >
-                                <i class="icon ion-ios-paper-outline"></i></a>	
-                            </td>    11                    
+                                
+
+                                <!-- why don't open new tab by pdf files.  -->
+                            <!-- <td><a th:onclick="|javascript:OpenInNewTab('@{'/link/sdc112/' + ${file.file_id}}')|" class="link-details" title="Preview File" >
+                                <i class="icon ion-ios-paper-outline"></i></a></td>                         -->
+
+                            <td><a id="openNewTab" th:href="@{'/link/sdc112/' + ${file.file_id}}"  th:target="_blank" class="link-details" title="Preview File" >
+                                <i class="icon ion-ios-paper-outline"></i></a></td>                        
                           </tr>
                         </tbody>
                     </table>

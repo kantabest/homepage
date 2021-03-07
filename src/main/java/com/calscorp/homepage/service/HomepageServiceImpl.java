@@ -3,9 +3,12 @@ package com.calscorp.homepage.service;
 import java.util.List;
 import java.util.Map;
 
+import com.calscorp.homepage.common.pojo.contact;
 import com.calscorp.homepage.common.pojo.content;
 import com.calscorp.homepage.common.pojo.field;
 import com.calscorp.homepage.common.pojo.fieldItem;
+import com.calscorp.homepage.common.pojo.history;
+import com.calscorp.homepage.common.pojo.specification;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -43,7 +46,7 @@ public class HomepageServiceImpl implements HomepageService {
     }
 
     @Override
-    public List<Map<String, String>> selectItemSpecList(Map<String, String> param) {
+    public List<specification> selectItemSpecList(Map<String, Object> param) {
         // TODO Auto-generated method stub
         return homepageMapper.selectItemSpecList(param);
     }
@@ -55,7 +58,7 @@ public class HomepageServiceImpl implements HomepageService {
     }
 
     @Override
-    public List<Map<String, String>> selectHistoryList(String langType) {
+    public List<history> selectHistoryList(String langType) {
         // TODO Auto-generated method stub
         return homepageMapper.selectHistoryList(langType);
     }
@@ -67,9 +70,9 @@ public class HomepageServiceImpl implements HomepageService {
     }
 
     @Override
-    public List<Map<String, String>> selectContactList(String langType) {
+    public List<contact> selectContactList(String langType) {
         // TODO Auto-generated method stub
-        return homepageMapper.selectCateList(langType);
+        return homepageMapper.selectContactList(langType);
     }
 
     @Override

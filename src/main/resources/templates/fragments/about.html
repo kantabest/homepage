@@ -8,8 +8,8 @@
       About Us Section
     ============================-->
     <section id="about">
-        <div class="container">
-  
+        <div class="container">  
+          
           <header class="section-header">
             <h3><span th:text="${msgMap.get('ABOUT_Introduce_Title')}"></span></h3>
             <h4><span th:text="${msgMap.get('ABOUT_Introduce_SubTitle')}"></span></h4>
@@ -25,7 +25,7 @@
                   <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
                 </div>
                 
-                <h2 class="title"><a th:href="@{/views/history/}+${langType}"><span th:text="${msgMap.get('ABOUT_Introduce_A001_Title')}"></span></a></h2>
+                <h2 class="title"><a href="#historyModal" data-toggle="modal" data-target="#historyModal"><span th:text="${msgMap.get('ABOUT_Introduce_A001_Title')}"></span></a></h2>
                 <p><span th:text="${msgMap.get('ABOUT_Introduce_A001_SubTitle')}"></span>
                 </p>
               </div>
@@ -40,7 +40,7 @@
                   <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
                 </div>
                 
-                <h2 class="title"><a th:href="@{/views/vision/}+${langType}"><span th:text="${msgMap.get('ABOUT_Introduce_A002_Title')}"></span></a></h2>
+                <h2 class="title"><a href="#visionModal" data-toggle="modal" data-target="#visionModal"><span th:text="${msgMap.get('ABOUT_Introduce_A002_Title')}"></span></a></h2>
                 <p><span th:text="${msgMap.get('ABOUT_Introduce_A002_SubTitle')}"></span>
                 </p>
               </div>
@@ -54,7 +54,7 @@
                   <div class="icon"><i class="ion-ios-eye-outline"></i></div>
                 </div>
             
-                <h2 class="title"><a th:href="@{index#certifications}"><span th:text="${msgMap.get('ABOUT_Introduce_A003_Title')}"></span></a></h2>
+                <h2 class="title"><a href="#certifications"><span th:text="${msgMap.get('ABOUT_Introduce_A003_Title')}"></span></a></h2>
                 <p><span th:text="${msgMap.get('ABOUT_Introduce_A003_SubTitle')}"></span>
                 </p>
               </div>

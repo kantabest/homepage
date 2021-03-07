@@ -8,12 +8,12 @@ import lombok.ToString;
 @Setter
 @ToString
 
-public class content { 
+public class contact { 
     
-    String fileId;
-    String fileNm;
-    String title;
-    String subTitle;
-    String redirectUrl;
+    String address;
+    String phone;
+    String email;
+    String ggmap;
+    
 }
 

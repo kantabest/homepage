@@ -45,7 +45,7 @@
 	]]>
 	</select>
 	
-	<select id="selectItemSpecList" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+	<select id="selectItemSpecList" parameterType="java.util.HashMap" resultType="specification">
 	<![CDATA[ 
 		select a.itm_id, a.itm_nm, a.spec_no
 			  ,CASE WHEN #{langType} = 'EN' THEN spec_nm_en
@@ -56,7 +56,7 @@
 			  ,a.spec_value
 				
 				
-			   ,a.rmks, a.use_yn, a.mid, a.mnm, a.mdt, a.use_master
+			   
 		  from sdc111v a
 		 where a.itm_id = #{itm_id}
 		   and a.use_yn = '1'
@@ -75,7 +75,7 @@
 	]]>
 	</select>		
 		
-	<select id="selectHistoryList" parameterType="String" resultType="java.util.HashMap">
+	<select id="selectHistoryList" parameterType="String" resultType="history">
 	<![CDATA[ 
 	
 	  select history_no, convert(varchar(4), history_dt, 120) as history_dt, history_subject, history_content, use_yn			  
@@ -90,7 +90,7 @@
 	]]>
 	</select>
 	
-	<select id="selectContentsCodeList" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+	<select id="selectContentsCodeList" parameterType="java.util.HashMap" resultType="content">
 	<![CDATA[ 
 	
 	  select file_id, file_nm
@@ -116,7 +116,7 @@
 	]]>
 	</select>
 	
-	<select id="selectContactList" parameterType="String" resultType="java.util.HashMap">
+	<select id="selectContactList" parameterType="String" resultType="contact">
 	<![CDATA[ 
 			SELECT  contact_no, bs_cd, lang_cd, sq, address, phone, email, ggmap, ment, use_yn, mid, mdt
 			FROM    SDC114V
