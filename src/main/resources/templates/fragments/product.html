@@ -48,7 +48,17 @@
           <div class="col-sm-3">
             <span>
               <select id="selectCateNo" class="form-control" th:field="*{cate_list}">
-                <option value=0> -선택- </option>
+                <div th:switch="${langType}">
+            
+                  <!-- thymeleaf에서는 속성작성중 줄바꿈 일어나면 파싱 못함.
+                  줄바꿈 하지 말 것. 이것때문에 인생 일부 낭비 -->
+                  <option value=0 th:case="EN" th:text="'-Select-'"> -선택- </option>
+                  <option value=0 th:case="CN" th:text="'-选择-'"> -선택- </option>
+                  <option value=0 th:case="*" th:text="'-선택-'"> -선택- </option>
+                </div>
+
+
+                
                 <option th:each="cateItem : ${cate_list}" th:text="${cateItem.cate_nm}" th:value="${cateItem.cate_no}">
                 </option>
               </select>

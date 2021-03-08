@@ -570,7 +570,6 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 
 /* INDEX - MODAL */
-
 .modal {
   color: #000;
 }
@@ -580,11 +579,20 @@ body.mobile-nav-active #mobile-nav-toggle {
   font-weight: bold;
 }
 
-.modal-dialog,
+/* .modal-dialog,
 .modal-content {
-    /* 100% of window height */
     height: 90%;
+} */
+
+#modal-dialog-history,
+#modal-dialog-spec,
+#modal-dialog-vision,
+#modal-content-history,
+#modal-content-spec,
+#modal-content-vision {
+  height: 90%;
 }
+
 .modal-body {
     /* 100% = dialog height, 120px = header + footer */
     overflow-y: scroll;
@@ -593,7 +601,6 @@ body.mobile-nav-active #mobile-nav-toggle {
     background-position: center; 
     background-repeat: no-repeat;
 }
-
 
 
 /*--------------------------------------------------------------
