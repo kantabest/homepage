@@ -4,61 +4,59 @@
 
 <script type="text/javascript">
 
-	function ChangeSearchText()
-	{
+  function ChangeSearchText() {
 
-		var value = $("#menu_search_text").val();
-		var table = $('#dataTable').DataTable();
+    var value = $("#menu_search_text").val();
+    var table = $('#dataTable').DataTable();
 
-        table.search(value).draw();
-        
-	}
-	
+    table.search(value).draw();
 
-	$(document).ready(function(){
-	       $("#menu_search_text").keypress(function (e) {
-	        if (e.which == 13){
-				location.href="index.jsp?langType=" + $("#langType").val() +"#searchProduct";
-	        }
-	    });
-	});
+  }
+
+
+  $(document).ready(function () {
+    $("#menu_search_text").keypress(function (e) {
+      if (e.which == 13) {
+        location.href = "index.jsp?langType=" + $("#langType").val() + "#searchProduct";
+      }
+    });
+  });
 
 
 </script>
 
-  <body>
-    <div th:fragment="menu">
+<body>
+  <div th:fragment="menu">
 
-        <!-- <input name="langType" th:value="${langType}"> -->
-        <!-- <input name="langType" th:value="${msgMap.get('MENU_About')}"> -->
+    <!-- <input name="langType" th:value="${langType}"> -->
+    <!-- <input name="langType" th:value="${msgMap.get('MENU_About')}"> -->
 
-        <div class="container-fluid">
-            <div id="logo">      
-              <a th:href="@{#intro}"><img th:src="@{/img/Logo_CALS3.png}" width="25%" height="25%" alt="" title=""/></a>
-            </div>
-            
-            
-            <nav id="nav-menu-container">
-              <ul class="nav-menu">
-                <li><a th:href="@{#intro}" style="color: blue;" th:text="home"></a></li>
-                <li><a th:href="@{#about}" th:text="${msgMap.get('MENU_About')}"></a></li>
-                <li><a th:href="@{#product}" th:text="${msgMap.get('MENU_Product')}"></a></li>
-                <li><a th:href="@{#machinesLabs}" th:text="${msgMap.get('MENU_Machines_labs')}"></a></li>
-                <li><a th:href="@{#contact}" th:text="${msgMap.get('MENU_Contact')}"></a></li>
-                <li><a th:href="@{#searchProduct}"><span th:text="${msgMap.get('MENU_Search')}"><i class="ionicons ion-android-search"></i></span></a></li>
-                <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+    <div class="container-fluid">
+      <div id="logo">
+        <a th:href="@{#intro}"><img th:src="@{/img/Logo_CALS3.png}" width="25%" height="25%" alt="" title="" /></a>
+      </div>
 
-                <li><a th:href="@{/views/index/} + 'KR'">KR</a>
-                    <a th:href="@{/views/index/} + 'EN'">EN</a>
-                    <a th:href="@{/views/index/} + 'CN'">CN</a>
-                </li>
-                
-              </ul>
-            </nav> <!-- #nav-menu-container -->
-          </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li><a th:href="@{#intro}" style="color: blue;" th:text="home"></a></li>
+          <li><a th:href="@{#about}" th:text="${msgMap.get('MENU_About')}"></a></li>
+          <li><a th:href="@{#product}" th:text="${msgMap.get('MENU_Product')}"></a></li>
+          <li><a th:href="@{#machinesLabs}" th:text="${msgMap.get('MENU_Machines_labs')}"></a></li>
+          <li><a th:href="@{#contact}" th:text="${msgMap.get('MENU_Contact')}"></a></li>
+          <li><a th:href="@{#searchProduct}"><span th:text="${msgMap.get('MENU_Search')}"><i
+                  class="ionicons ion-android-search"></i></span></a></li>
+          <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+
+          <li><a th:href="@{/views/index/} + 'KR'">KR</a>
+            <a th:href="@{/views/index/} + 'EN'">EN</a>
+            <a th:href="@{/views/index/} + 'CN'">CN</a>
+          </li>
+
+        </ul>
+      </nav> <!-- #nav-menu-container -->
     </div>
-  </body>
-  
+  </div>
+</body>
+
 </html>
-
-

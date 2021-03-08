@@ -3,66 +3,75 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <body>
-    <div th:fragment="footer">
-      <footer id="footer">
-        <div class="footer-top">
-          <div class="container">
-            <div class="row">
+  <div th:fragment="footer">
+    <footer id="footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
 
-              <div class="col-lg-3 col-md-6 footer-info">
-                <h3><span th:text="${msgMap.get('FOOTER_CALS_IS_Title')}"></span></h3>
-                <p> <span th:text="${msgMap.get('FOOTER_CALS_IS_SubTitle')}"></span></p>
-              </div>
-
-              <div class="col-lg-3 col-md-6 footer-links">
-                <h4><span th:text="${msgMap.get('FOOTER_USEFUL_LINKS_Title')}"></span></h4>
-                <ul>
-                  <li><i class="ion-ios-arrow-right"></i> <a th:href="@{index#Home}">Home</a></li>
-                  <li><i class="ion-ios-arrow-right"></i> <a th:href="@{index#about}"><span th:text="${msgMap.get('MENU_About')}"></span></a></li>    
-                  <li><i class="ion-ios-arrow-right"></i> <a th:href="@{index#product}"><span th:text="${msgMap.get('MENU_Product')}"></span></a></li>
-                  <li><i class="ion-ios-arrow-right"></i> <a th:href="@{index#Contact}"><span th:text="${msgMap.get('MENU_Contact')}"></span></a></li>
-                </ul>
-              </div>
-
-              <div class="col-lg-3 col-md-6 footer-contact">
-                <h4><span th:text="${msgMap.get('FOOTER_CONTACT_US_Title')}"></span></h4>
-                <span th:each="info, i: ${footerList}">
-                  <i class="ion-android-home">&nbsp;<span th:utext="${#strings.replace(info.address, newLineChar, '&lt;br /&gt;&nbsp;&nbsp;&nbsp;')}"></span></i><br/>
-                  <i class="ion-ios-telephone">&nbsp;<span th:utext="${#strings.replace(info.phone, newLineChar, '&lt;br /&gt;;&nbsp;&nbsp;&nbsp;')}"></span></i><br/>
-                  <i class="ion-email">&nbsp;<span th:utext="${#strings.replace(info.email, newLineChar, '&lt;br /&gt;;&nbsp;&nbsp;&nbsp;')}"></span></i><br/><br/>
-                </span>
-              </div>
-
-              <div class="col-lg-3 col-md-6 footer-newsletter">
-                <h4> <span th:text="${msgMap.get('FOOTER_CompanyInfo_Title')}"></span> </h4>
-                <p><span th:utext="${#strings.replace(msgMap.get('FOOTER_CompanyInfo_SubTitle'), newLineChar, '&lt;br /&gt;')}"></span></p>
-                
-                
-                <form action="" method="post">
-    <!--               <input type="email" name="email"><input type="submit"  value="Subscribe"> -->
-                </form>
-              </div>
-
+            <div class="col-lg-3 col-md-6 footer-info">
+              <h3><span th:text="${msgMap.get('FOOTER_CALS_IS_Title')}"></span></h3>
+              <p> <span th:text="${msgMap.get('FOOTER_CALS_IS_SubTitle')}"></span></p>
             </div>
+
+            <div class="col-lg-3 col-md-6 footer-links">
+              <h4><span th:text="${msgMap.get('FOOTER_USEFUL_LINKS_Title')}"></span></h4>
+              <ul>
+                <li><i class="ion-ios-arrow-right"></i> <a th:href="@{index#Home}">Home</a></li>
+                <li><i class="ion-ios-arrow-right"></i> <a th:href="@{index#about}"><span
+                      th:text="${msgMap.get('MENU_About')}"></span></a></li>
+                <li><i class="ion-ios-arrow-right"></i> <a th:href="@{index#product}"><span
+                      th:text="${msgMap.get('MENU_Product')}"></span></a></li>
+                <li><i class="ion-ios-arrow-right"></i> <a th:href="@{index#contact}"><span
+                      th:text="${msgMap.get('MENU_Contact')}"></span></a></li>
+              </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6 footer-contact">
+              <h4><span th:text="${msgMap.get('FOOTER_CONTACT_US_Title')}"></span></h4>
+              <span th:each="info, i: ${footerList}">
+                <i class="ion-android-home">&nbsp;<span
+                    th:utext="${#strings.replace(info.address, newLineChar, '&lt;br /&gt;&nbsp;&nbsp;&nbsp;')}"></span></i><br />
+                <i class="ion-ios-telephone">&nbsp;<span
+                    th:utext="${#strings.replace(info.phone, newLineChar, '&lt;br /&gt;;&nbsp;&nbsp;&nbsp;')}"></span></i><br />
+                <i class="ion-email">&nbsp;<span
+                    th:utext="${#strings.replace(info.email, newLineChar, '&lt;br /&gt;;&nbsp;&nbsp;&nbsp;')}"></span></i><br /><br />
+              </span>
+            </div>
+
+            <div class="col-lg-3 col-md-6 footer-newsletter">
+              <h4> <span th:text="${msgMap.get('FOOTER_CompanyInfo_Title')}"></span> </h4>
+              <p><span
+                  th:utext="${#strings.replace(msgMap.get('FOOTER_CompanyInfo_SubTitle'), newLineChar, '&lt;br /&gt;')}"></span>
+              </p>
+
+
+              <form action="" method="post">
+                <!--               <input type="email" name="email"><input type="submit"  value="Subscribe"> -->
+              </form>
+            </div>
+
           </div>
         </div>
+      </div>
 
-        <div class="container">
-          <div class="copyright">
-            &copy; Copyright <strong>CALS</strong>. All Rights Reserved
-          </div>
-          <div class="credits">
-            <!--
+      <div class="container">
+        <div class="copyright">
+          &copy; Copyright <strong>CALS</strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+          <!--
               All the links in the footer should remain intact.
               You can delete the links only if you purchased the pro version.
               Licensing information: https://bootstrapmade.com/license/
               Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=BizPage
             -->
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-          </div>
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
         </div>
-      </footer>  
+      </div>
+    </footer>
 
-    </div>
+  </div>
 </body>
+
 </html>

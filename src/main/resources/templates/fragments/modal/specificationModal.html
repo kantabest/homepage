@@ -11,6 +11,18 @@
         <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="specModalTitle">Modal title</h5>
+           &ensp;
+          <div th:switch="${langType}">
+            
+            <!-- thymeleaf에서는 속성작성중 줄바꿈 일어나면 파싱 못함.
+            줄바꿈 하지 말 것. 이것때문에 인생 일부 낭비 -->
+            <h5 class="modal-title" id="specModalSubTitle" th:case="EN" th:text="'Representative characteristics'">Modal title</h5>
+            <h5 class="modal-title" id="specModalSubTitle" th:case="CN" th:text="代表特征">Modal title</h5>
+            <h5 class="modal-title" id="specModalSubTitle" th:case="*"  th:text="대표성상">Modal title</h5>
+          </div>
+           
+
+
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
           </button>
@@ -19,9 +31,18 @@
           <table class="table table-striped">
             <thead>
               <tr>
-              <th scope="col">#</th>
-              <th scope="col">TEST NAME</th>
-              <th scope="col">시험결과값</th>						
+                <th scope="col">No</th>
+                <div th:switch="${langType}">
+                  <th scope="col" th:case="EN" >TEST NAME</th>
+                  <th scope="col" th:case="CN" >测试项目</th>
+                  <th scope="col" th:case="*" >시험항목</th>
+                </div>
+  
+                <div th:switch="${langType}">
+                  <th scope="col" th:case="EN" >Result values</th>
+                  <th scope="col" th:case="CN" >结果值</th>
+                  <th scope="col" th:case="*" >시험결과값</th>
+                </div>   
               </tr>
             </thead>
             <tbody id="specificationTableBody">

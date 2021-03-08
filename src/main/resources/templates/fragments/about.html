@@ -3,67 +3,67 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <body>
-    <div th:fragment="about">
-   <!--==========================
-      About Us Section
-    ============================-->
+  <div th:fragment="about">
     <section id="about">
-        <div class="container">  
-          
-          <header class="section-header">
-            <h3><span th:text="${msgMap.get('ABOUT_Introduce_Title')}"></span></h3>
-            <h4><span th:text="${msgMap.get('ABOUT_Introduce_SubTitle')}"></span></h4>
-          </header>
-  
-          <div class="row about-cols">
-  
-            <div class="col-md-4 wow fadeInUp">
-              <div class="about-col">
-              
-                <div class="img">
-                  <img th:src="@{/img/about/history.jpg}" alt="" class="img-fluid">
-                  <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
-                </div>
-                
-                <h2 class="title"><a href="#historyModal" data-toggle="modal" data-target="#historyModal"><span th:text="${msgMap.get('ABOUT_Introduce_A001_Title')}"></span></a></h2>
-                <p><span th:text="${msgMap.get('ABOUT_Introduce_A001_SubTitle')}"></span>
-                </p>
-              </div>
-            </div>
+      <div class="container">
+        <header class="section-header">
+          <h3><span th:text="${msgMap.get('ABOUT_Introduce_Title')}"></span></h3>
+          <h4><span th:text="${msgMap.get('ABOUT_Introduce_SubTitle')}"></span></h4>
+        </header>
 
+        <div class="row about-cols">
 
-            <div class="col-md-4 wow fadeInUp">
-              <div class="about-col">
-              
-                <div class="img">
-                  <img th:src="@{/img/about/vision.jpg}" alt="" class="img-fluid">
-                  <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
-                </div>
-                
-                <h2 class="title"><a href="#visionModal" data-toggle="modal" data-target="#visionModal"><span th:text="${msgMap.get('ABOUT_Introduce_A002_Title')}"></span></a></h2>
-                <p><span th:text="${msgMap.get('ABOUT_Introduce_A002_SubTitle')}"></span>
-                </p>
+          <div class="col-md-4 wow fadeInUp">
+            <div class="about-col">
+
+              <div class="img">
+                <img th:src="@{/img/about/history.jpg}" alt="" class="img-fluid">
+                <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
               </div>
+
+              <h2 class="title"><a href="#historyModal" data-toggle="modal" data-target="#historyModal"><span
+                    th:text="${msgMap.get('ABOUT_Introduce_A001_Title')}"></span></a></h2>
+              <p><span th:text="${msgMap.get('ABOUT_Introduce_A001_SubTitle')}"></span>
+              </p>
             </div>
-           
-            <div class="col-md-4 wow fadeInUp" data-wow-delay="0.1s">
-              <div class="about-col">
-            
-                <div class="img">
-                  <img th:src="@{/img/about/quality.jpg}" alt="" class="img-fluid">
-                  <div class="icon"><i class="ion-ios-eye-outline"></i></div>
-                </div>
-            
-                <h2 class="title"><a href="#certifications"><span th:text="${msgMap.get('ABOUT_Introduce_A003_Title')}"></span></a></h2>
-                <p><span th:text="${msgMap.get('ABOUT_Introduce_A003_SubTitle')}"></span>
-                </p>
-              </div>
-            </div>
-  
           </div>
-  
+
+
+          <div class="col-md-4 wow fadeInUp">
+            <div class="about-col">
+
+              <div class="img">
+                <img th:src="@{/img/about/vision.jpg}" alt="" class="img-fluid">
+                <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
+              </div>
+
+              <h2 class="title"><a href="#visionModal" data-toggle="modal" data-target="#visionModal"><span
+                    th:text="${msgMap.get('ABOUT_Introduce_A002_Title')}"></span></a></h2>
+              <p><span th:text="${msgMap.get('ABOUT_Introduce_A002_SubTitle')}"></span>
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="about-col">
+
+              <div class="img">
+                <img th:src="@{/img/about/quality.jpg}" alt="" class="img-fluid">
+                <div class="icon"><i class="ion-ios-eye-outline"></i></div>
+              </div>
+
+              <h2 class="title"><a href="#certifications"><span
+                    th:text="${msgMap.get('ABOUT_Introduce_A003_Title')}"></span></a></h2>
+              <p><span th:text="${msgMap.get('ABOUT_Introduce_A003_SubTitle')}"></span>
+              </p>
+            </div>
+          </div>
+
         </div>
-      </section><!-- #about -->
-    </div>
+
+      </div>
+    </section><!-- #about -->
+  </div>
 </body>
-</html>  
+
+</html>

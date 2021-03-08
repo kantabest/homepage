@@ -3,66 +3,51 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <body>
-    <div th:fragment="contact">
-   <!--==========================
-      About Us Section
-    ============================-->
+  <div th:fragment="contact">
     <section id="contact">
-        <div class="container">  
-          
-          <header class="section-header">
-            <h3><span th:utext="${msgMap.get('CONTACT_Header_Title')}"></span></h3>
-            <h4><span th:utext="${msgMap.get('CONTACT_Header_SubTitle')}"></span></h4>
-            <br>
-            <h4><span th:utext="${msgMap.get('CONTACT_Header_Ment')}"></span></h4>
-          </header>
-  
-          <div class="row contact-info" th:each="contact, i:${contactList}">
-            <div class="col-md-4">
-              <div class="contact-address">
-                <i class="ion-ios-location-outline"></i>
-                <h3><span th:utext="${msgMap.get('CONTACT_Info_Address')}"></span></h3>
-                <address>
-                  <span th:utext="${msgMap.get('CONTACT_Info_Address')}"></span>
-                  <br>
-                   <!-- th:utext="${#strings.replace(info.address, newLineChar, '&lt;br /&gt;&nbsp;&nbsp;&nbsp;')}"></span></i><br/> -->
+      <div class="container">
 
-                  <span th:utext="${#strings.replace(contact.address, newLineChar,'&lt;br /&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;')}"></span><br/> 
-                </address>
-              </div>
+        <header class="section-header">
+          <h3><span th:utext="${msgMap.get('CONTACT_Header_Title')}"></span></h3>
+          <h4><span th:utext="${msgMap.get('CONTACT_Header_SubTitle')}"></span></h4>
+          <br>
+          <h4><span th:utext="${msgMap.get('CONTACT_Header_Ment')}"></span></h4>
+        </header>
+
+        <div class="row contact-info" th:each="contact, i:${contactList}">
+          <div class="col-md-4">
+            <div class="contact-address">
+              <i class="ion-ios-location-outline"></i>
+              <h3><span th:utext="${msgMap.get('CONTACT_Info_Address')}"></span></h3>
+              <address>
+                <span th:utext="${#strings.replace(contact.address, newLineChar,'&lt;br /&gt;')}"></span><br />
+              </address>
             </div>
-  
-            <div class="col-md-4">
-              <div class="contact-phone">
-                <i class="ion-ios-telephone-outline"></i>
-                <h3><span th:text="${msgMap.get('CONTACT_Info_Phone')}"></span></h3>
-                <p><a th:href="@{'tel:' + '${contact.phone}'}" th:text="${contact.phone}"></a></p>
-                <!-- <p><a href="tel:<%=m.get("phone") %>"><%=m.get("phone") %></a></p> -->
-              </div>
-            </div>
-  
-            <div class="col-md-4">
-              <div class="contact-email">
-                <i class="ion-ios-email-outline"></i>
-                <h3><span th:text="${msgMap.get('CONTACT_Info_Email')}"></span></h3>
-                <!-- <h3><%=msgMap.get("CONTACT_Info_Email") %></h3> -->
-                <p><a th:href="@{'mailto:' + '${contact.email}'}" th:text="${contact.email}"></a></p>
-                <!-- <p><a href="mailto:<%=m.get("email") %>"><%=m.get("email") %></a></p> -->
-              </div>
-            </div>
-            <div id="map-addr" class="col-md-12" >
-              <iframe th:src="${contact.ggmap}" width="100%" height="300px" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-              <!-- <iframe src="<%=m.get("ggmap") %>" width="100%" height="300px" frameborder="0" style="border:0;" allowfullscreen=""></iframe> -->
-                
-            </div>
-  
           </div>
 
+          <div class="col-md-4">
+            <div class="contact-phone">
+              <i class="ion-ios-telephone-outline"></i>
+              <h3><span th:text="${msgMap.get('CONTACT_Info_Phone')}"></span></h3>
+              <p><a th:href="@{'tel:' + '${contact.phone}'}" th:text="${contact.phone}"></a></p>
+            </div>
+          </div>
 
-  
-  
+          <div class="col-md-4">
+            <div class="contact-email">
+              <i class="ion-ios-email-outline"></i>
+              <h3><span th:text="${msgMap.get('CONTACT_Info_Email')}"></span></h3>
+              <p><a th:href="@{'mailto:' + '${contact.email}'}" th:text="${contact.email}"></a></p>
+            </div>
+          </div>
+          <div id="map-addr" class="col-md-12">
+            <iframe th:src="${contact.ggmap}" width="100%" height="300px" frameborder="0" style="border:0;"
+              allowfullscreen=""></iframe>
+          </div>
         </div>
-      </section><!-- #contact -->
-    </div>
+      </div>
+    </section>
+  </div>
 </body>
-</html>  
+
+</html>

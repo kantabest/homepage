@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>CALS Corporation</title>
@@ -8,76 +9,78 @@
 	<meta content="특수그리스, 구리스, 그리스, 윤활유, 특수윤활유, 고온그리스, 내열구리스, 장암칼스, CALS" name="keywords">
 	<meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-	<meta property="og:type" content="website"> 
+	<meta property="og:type" content="website">
 	<meta property="og:title" content="장암칼스 - CALS Corporation">
 	<meta property="og:description" content="특수그리스, 구리스, 그리스, 윤활유, 특수윤활유, 고온그리스, 내열구리스, 장암칼스, CALS">
 	<meta property="og:image" content="/img/cals_logo/Logo_CALS3.png">
-	<meta property="og:url" content="https://cals-corp.com">  
+	<meta property="og:url" content="https://cals-corp.com">
 
-    <script th:src="@{/js/jquery-3.5.1.min.js}"></script>
+	<script th:src="@{/js/jquery-3.5.1.min.js}"></script>
 	<script th:src="@{/js/top.js}"></script>
 
 
-	
-	<!-- Table -->	
+
+	<!-- Table -->
 	<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
 	<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
-	<script th:src="@{/js/datatables-demo.js}"></script>	  
-	   
-	<link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
+	<script th:src="@{/js/datatables-demo.js}"></script>
+
+	<link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet"
+		crossorigin="anonymous" />
 
 
 	<!-- Favicons -->
 	<link th:href="@{/img/favicon-32x32-removebg.png}" rel="icon">
 	<link th:href="@{/img/apple-touch-icon.png}" rel="apple-touch-icon">
-	
+
 	<!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
-	
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700"
+		rel="stylesheet">
+
 	<!-- Bootstrap CSS File -->
 	<link th:href="@{/lib/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
-	
+
 	<!-- Libraries CSS Files -->
 	<link th:href="@{/lib/font-awesome/css/font-awesome.min.css}" rel="stylesheet">
 	<link th:href="@{/lib/animate/animate.min.css}" rel="stylesheet">
 	<link th:href="@{/lib/ionicons/css/ionicons.min.css}" rel="stylesheet">
 	<link th:href="@{/lib/owlcarousel/assets/owl.carousel.min.css}" rel="stylesheet">
 	<link th:href="@{/lib/lightbox/css/lightbox.min.css}" rel="stylesheet">
-	
+
 
 	<!-- Main Stylesheet File -->
 	<link th:href="@{/css/style.css}" rel="stylesheet">
 
 
 
-        <!-- Uncomment below i you want to use a preloader -->
-        <!-- <div id="preloader}"></div> -->
-      
-        <!-- JavaScript Libraries -->
-        <!-- <script th:src="@{/lib/jquery/jquery.min.js}"></script> -->
-        <!-- <script th:src="@{/lib/jquery/jquery-migrate.min.js}"></script> -->
-        <script th:src="@{/lib/bootstrap/js/bootstrap.bundle.min.js}"></script>
-        <script th:src="@{/lib/easing/easing.min.js}"></script>
-        <script th:src="@{/lib/superfish/hoverIntent.js}"></script>
-        <script th:src="@{/lib/superfish/superfish.min.js}"></script>
+	<!-- Uncomment below i you want to use a preloader -->
+	<!-- <div id="preloader}"></div> -->
 
-		<!-- 메뉴 팝업와우 -->
-		<script th:src="@{/lib/isotope/isotope.pkgd.min.js}"></script>
-		<script th:src="@{/lib/wow/wow.min.js}"></script> 		
+	<!-- JavaScript Libraries -->
+	<!-- <script th:src="@{/lib/jquery/jquery.min.js}"></script> -->
+	<!-- <script th:src="@{/lib/jquery/jquery-migrate.min.js}"></script> -->
+	<script th:src="@{/lib/bootstrap/js/bootstrap.bundle.min.js}"></script>
+	<script th:src="@{/lib/easing/easing.min.js}"></script>
+	<script th:src="@{/lib/superfish/hoverIntent.js}"></script>
+	<script th:src="@{/lib/superfish/superfish.min.js}"></script>
 
-        <script th:src="@{/lib/waypoints/waypoints.min.js}"></script>
-        <script th:src="@{/lib/counterup/counterup.min.js}"></script>
-        <script th:src="@{/lib/owlcarousel/owl.carousel.min.js}"></script>
-        <script th:src="@{/lib/lightbox/js/lightbox.min.js}"></script>
-        <script th:src="@{/lib/touchSwipe/jquery.touchSwipe.min.js}"></script>
+	<!-- 메뉴 팝업와우 -->
+	<script th:src="@{/lib/isotope/isotope.pkgd.min.js}"></script>
+	<script th:src="@{/lib/wow/wow.min.js}"></script>
 
-        <!-- Contact Form JavaScript File -->
-        <script th:src="@{/contactform/contactform.js}"></script>
-      
-        
-		<script th:src="@{/js/main.js}"></script>
+	<script th:src="@{/lib/waypoints/waypoints.min.js}"></script>
+	<script th:src="@{/lib/counterup/counterup.min.js}"></script>
+	<script th:src="@{/lib/owlcarousel/owl.carousel.min.js}"></script>
+	<script th:src="@{/lib/lightbox/js/lightbox.min.js}"></script>
+	<script th:src="@{/lib/touchSwipe/jquery.touchSwipe.min.js}"></script>
 
-          <!-- <div class="tables-script" >
+	<!-- Contact Form JavaScript File -->
+	<script th:src="@{/contactform/contactform.js}"></script>
+
+
+	<script th:src="@{/js/main.js}"></script>
+
+	<!-- <div class="tables-script" >
             
             <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
             <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
@@ -89,93 +92,80 @@
 </head>
 
 <script>
-// function OpenInNewTab(url) {
-// 	alert(url);
-// 	var win = window.open(url, '_blank');
-// 	 win.focus();
-// }
+	$(document).ready(function () {
+		// 연혁 테이블 바디를 만든다.
+		$("#historyModal").on("show.bs.modal", function (event) {
 
-$(document).ready(function(){
-    $("#historyModal").on("show.bs.modal", function(event){
-
-		var langType = $("#langType").val();   
-		
-	 
-		$.ajax({
-			type: 'POST',
-			url: 'getHistoryCompany',
-			data: { 
-				'langType' : langType
-			}
-	
-		}).done(function(data) {
-			
-		$('#historyTableBody').empty();
-
-		let historyItem = '';
-		
-		var historyKey = 0 ;
-
-		$.each(data, function(key, value) {
-			// $('#exampleModalLongTitle').text(value.itmNm);	
-
-			historyItem += '<tr>';
-			// specItem += '<th scope="row">' + (specItemKey++) + '</th>';
-			historyItem += '<td id="td-history-dt">' + value.historyDt + '</td>';
-			historyItem += '<td>' + value.historySubject + '</td>';
-			historyItem += '</tr>';
+			var langType = $("#langType").val();
 
 
-			// 5로우마다 빈줄
-			if ((++historyKey%5) == 0) {
-				
-				historyItem += '<tr><td>　</td><td> </td> </tr>';
-				
-			}
-		});
+			$.ajax({
+				type: 'POST',
+				url: 'getHistoryCompany',
+				data: {
+					'langType': langType
+				}
 
-		$('#historyTableBody').append(historyItem);
+			}).done(function (data) {
 
-		});	
-		
-	});
-});
+				$('#historyTableBody').empty();
 
-$(document).ready(function(){
-    $("#visionModal").on("show.bs.modal", function(event){
+				let historyItem = '';
 
+				var historyKey = 0;
 
-		var langType = $("#langType").val();  
-				
-		$.ajax({
-			type: 'POST',
-			url: 'getvisionCompany',
-			data: { 
-				'langType' : langType
-			}
-	
-		}).done(function(data) {
-			
-			$('#vision-body-content').empty();
+				$.each(data, function (key, value) {
+					historyItem += '<tr>';
+					historyItem += '<td id="td-history-dt">' + value.historyDt + '</td>';
+					historyItem += '<td>' + value.historySubject + '</td>';
+					historyItem += '</tr>';
 
-// 		// let visionItem = '';
-		
-// 		// var visionKey = 0 ;
+					// 5로우마다 빈줄
+					if ((++historyKey % 5) == 0) {
+						historyItem += '<tr><td>　</td><td> </td> </tr>';
+					}
+				});
 
-			$.each(data, function(key, value) {
-				
-				$('#vision-body-content').append(value.content);
+				$('#historyTableBody').append(historyItem);
+
 			});
 
-		});	
-		
+		});
 	});
-});
 
+	$(document).ready(function () {
+		// 비전 테이블 바디를 만든다.
+		$("#visionModal").on("show.bs.modal", function (event) {
 
-$(document).on("click", "ul.product-filters li", function(e) {
+			var langType = $("#langType").val();
 
-		$('.product-container').isotope('destroy');		
+			$.ajax({
+				type: 'POST',
+				url: 'getvisionCompany',
+				data: {
+					'langType': langType
+				}
+
+			}).done(function (data) {
+
+				$('#vision-body-content').empty();
+
+				$.each(data, function (key, value) {
+					$('#vision-body-content').append(value.content);
+				});
+
+			});
+
+		});
+	});
+
+	$(document).on("click", "ul.product-filters li", function (e) {
+
+		// 필터 박스를 만든다.
+		// 아래 destroy는 초기 설정을 선택 시마다 해 주기 위해 만들어 준다.
+		// 무슨 이유인지 몰라도.. 생각대로 구현이 잘 안된다.
+		// 찾을 수 없는 함수라는 에러는 발생하지만 동작은 잘된다.
+		$('.product-container').isotope('destroy');
 
 		$('#product-filter-items').show();
 
@@ -185,224 +175,219 @@ $(document).on("click", "ul.product-filters li", function(e) {
 		$('.product-container').isotope({
 			itemSelector: '.product-item',
 			layoutMode: 'fitRows',
-			filter : $(this).data('filter') // 초기값 아무것도 없이 올리기
+			filter: $(this).data('filter') // 초기값 아무것도 없이 올리기
 		});
 
 		// productIsotope.isotope({ filter: $(this).data('filter') });
 
 
-	
-	});
-
-	$(document).on("click", "div.product-info a", function(e) {
-			var langType = $("#langType").val();    
-			var itmId = e.currentTarget.getAttribute("id");
-
-			
-				$.ajax({
-					type: 'POST',
-					url: 'getSpecification',
-					data: { 
-						'langType' : langType,
-						'itmId' : itmId 
-					}
-			
-				}).done(function(data) {
-					
-					
-
-					$('#specificationTableBody').empty();
-
-					let specItem = '';
-					let specItemKey = 1;
-					$.each(data, function(key, value) {
-						$('#specModalTitle').text(value.itmNm);	
-
-						specItem += '<tr>';
-						specItem += '<th scope="row">' + (specItemKey++) + '</th>';
-						specItem += '<td>' + value.specNm + '</td>';
-						specItem += '<td>' + value.specValue + '</td>';
-						specItem += '</tr>';
-					});
-
-					$('#specificationTableBody').append(specItem);
-
-				});	
-			// }
-			
-
-			
-
 
 	});
 
+	$(document).on("click", "div.product-info a", function (e) {
+		// 선택한 품목의 스펙을 볼 수 있는 링크를 만들어 준다.
+		var langType = $("#langType").val();
+		var itmId = e.currentTarget.getAttribute("id");
 
-  $(function () {
-	$('#selectCateNo').on("change", function() {
-
-		//1. 자식 노드를 모두 삭제한다.
-		var filter = document.getElementById("product-filters");
-		while ( filter.hasChildNodes() ) { 
-			filter.removeChild( filter.firstChild ); 
-			// alert("filter removed all");
-		}
-
-		var filterItems = document.getElementById("product-filter-items");
-		while ( filterItems.hasChildNodes() ) { 
-			filterItems.removeChild( filterItems.firstChild ); 
-			// alert("filter-item removed all");
-		}
-
-
-		// create filter
-		createFilter();
-
-		createFilterItems();
-
-
-		$('#product-filter-items').hide();
-
-      
-  });  
-});
-
-
-  function createFilter() {
-	var cateNo = $('#selectCateNo option:selected').val();            
-	var langType = $("#langType").val();    
-
-	$.ajax({
-        type: 'POST',
-        url: 'getFieldList',
-        data: { 'langType' : langType,
-                'cateNo' : cateNo}
-  
-      }).done(function(data) {
-
-		$('#product-filters').empty();
-
-		let filter = '';
-
-		$.each(data, function(key, value) {
-			
-			filter += '<li data-filter=".filter-' + value.fieldNo + '" > ' + value.fieldNm + '(' + value.itmCount + ')</li>';
-
-		});
-		$('#product-filters').append(filter);
-      });
-  }
-
-
-  function createFilterItems() {
-	var cateNo = $('#selectCateNo option:selected').val();            
-	var langType = $("#langType").val();    
-
-	
-	$.ajax({
-        type: 'POST',
-        url: 'getFieldItemList',
-        data: { 'langType' : langType,
-                'cateNo' : cateNo}
-  
-      }).done(function(data) {
-
-		$('#product-filter-items').empty();
-		
-
-		let filteritems = '';
-
-		$.each(data, function(key, value) {
-			// let filteritems = '';
-
-			filteritems += '<div class="col-lg-4 col-md-6 product-item filter-' + value.fieldNo + '" data-wow-delay="10.1s">';
-			filteritems += '<div class="product-wrap">';
-			
-			// #region figure
-			filteritems += '<figure>';
-
-			if (!value.tp100900Id) {
-				// filteritems += '<img src="/img/product/no_image.png" class="img-fluid" alt="" >';
-			} else {
-				filteritems += '<img src="/link/sdc112/' + value.tp100900Id + '" class="img-fluid" alt="">';
+		$.ajax({
+			type: 'POST',
+			url: 'getSpecification',
+			data: {
+				'langType': langType,
+				'itmId': itmId
 			}
 
+		}).done(function (data) {
 
-			if (!value.tP100901Id) {
-				// filteritems += '<a href="/img/product/no_image.png" data-lightbox="product" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>';
-			} else {
-				filteritems += '<a href="/link/sdc112/' + value.tP100901Id + '" data-lightbox="product" data-title="' + value.fieldNm + '>' + value.itmNm + '" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>';
-			}
+			// 스펙이 출력되는 테이블 바디를 삭제하고.. 아래 로직에서 새로 추가한다.
+			$('#specificationTableBody').empty();
 
-			if (!value.tP100100Id) {
-				// filteritems += '<a href="link/sdc112/abc.pdf" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>';
-			} else {
-				filteritems += '<a href="/link/sdc112/' + value.tP100100Id + '" download = "' + value.tP100100Nm + '" class="link-details" title="DownLoad File"><i class="ion ion-android-open"></i></a>';
-			}			
+			let specItem = '';
+			let specItemKey = 1;
+			$.each(data, function (key, value) {
 
-			filteritems += '</figure>';
-			// #endregion figure
-
-			filteritems += '<div class="product-info">';
-			filteritems += '<h4><font color=black>' + value.itmNm + '</font></h4>';
-			filteritems += '<p>' + value.fieldNm + '</p>';
-			
-
-			filteritems += '<p><a href="#specModal" id="' + value.itmId +'" class="link-preview" title="Specification" data-toggle="modal" data-target="#specModal"><i class="ion ion-eye"></i></a></p>';
+				// 모달창의 제목을 입력한다.
+				if (key == 1) {
+					$('#specModalTitle').text(value.itmNm);
+				}
 
 
-			if (!value.tP100100Id) {
-				// filteritems += '<a href="link/sdc112/abc.pdf" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>';
-			} else {
-				filteritems += '<a href="/link/sdc112/' + value.tP100100Id + '" download = "' + value.tP100100Nm + '" class="link-details" title="DownLoad File"><i class="ion ion-android-open"></i></a>';
-			}			
+				specItem += '<tr>';
+				specItem += '<th scope="row">' + (specItemKey++) + '</th>';
+				specItem += '<td>' + value.specNm + '</td>';
+				specItem += '<td>' + value.specValue + '</td>';
+				specItem += '</tr>';
+			});
 
-			filteritems += '</div>';
-			filteritems += '</div>';
-			filteritems += '</div>';
-			// $('#product-filter-items').isotope( 'insert', filteritems );
-
-			// $('#product-filter-items').append(filteritems);	
+			$('#specificationTableBody').append(specItem);
 
 		});
-		$('#product-filter-items').append(filteritems);	
-      });	  
+	});
 
-  }
+
+	$(function () {
+		$('#selectCateNo').on("change", function () {
+
+			// 기존에 추가된 자식 노드를 모두 삭제한다.
+			var filter = document.getElementById("product-filters");
+			while (filter.hasChildNodes()) {
+				filter.removeChild(filter.firstChild);
+			}
+
+			var filterItems = document.getElementById("product-filter-items");
+			while (filterItems.hasChildNodes()) {
+				filterItems.removeChild(filterItems.firstChild);
+			}
+
+			// 아래 함수를 돌면서 자식노드를 추가한다.
+			createFilter();
+
+			createFilterItems();
+
+
+			// 초기 조회 시 전체 출력이 안되고 필터 선택이 안된 상태로 필터목록만 보여주도록 한다.
+			$('#product-filter-items').hide();
+
+
+		});
+	});
+
+
+	function createFilter() {
+		var cateNo = $('#selectCateNo option:selected').val();
+		var langType = $("#langType").val();
+
+		$.ajax({
+			type: 'POST',
+			url: 'getFieldList',
+			data: {
+				'langType': langType,
+				'cateNo': cateNo
+			}
+
+		}).done(function (data) {
+
+			$('#product-filters').empty();
+
+			let filter = '';
+
+			$.each(data, function (key, value) {
+
+				filter += '<li data-filter=".filter-' + value.fieldNo + '" > ' + value.fieldNm + '(' + value.itmCount + ')</li>';
+
+			});
+			$('#product-filters').append(filter);
+		});
+	}
+
+
+	function createFilterItems() {
+		var cateNo = $('#selectCateNo option:selected').val();
+		var langType = $("#langType").val();
+
+
+		$.ajax({
+			type: 'POST',
+			url: 'getFieldItemList',
+			data: {
+				'langType': langType,
+				'cateNo': cateNo
+			}
+
+		}).done(function (data) {
+
+			$('#product-filter-items').empty();
+
+
+			let filteritems = '';
+
+			$.each(data, function (key, value) {
+
+				filteritems += '<div class="col-lg-4 col-md-6 product-item filter-' + value.fieldNo + '" data-wow-delay="10.1s">';
+				filteritems += '<div class="product-wrap">';
+
+				// #region figure
+				filteritems += '<figure>';
+
+				if (!value.tp100900Id) {
+					// filteritems += '<img src="/img/product/no_image.png" class="img-fluid" alt="" >';
+				} else {
+					filteritems += '<img src="/link/sdc112/' + value.tp100900Id + '" class="img-fluid" alt="">';
+				}
+
+
+				if (!value.tP100901Id) {
+					// filteritems += '<a href="/img/product/no_image.png" data-lightbox="product" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>';
+				} else {
+					filteritems += '<a href="/link/sdc112/' + value.tP100901Id + '" data-lightbox="product" data-title="' + value.fieldNm + '>' + value.itmNm + '" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>';
+				}
+
+				if (!value.tP100100Id) {
+					// filteritems += '<a href="link/sdc112/abc.pdf" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>';
+				} else {
+					filteritems += '<a href="/link/sdc112/' + value.tP100100Id + '" download = "' + value.tP100100Nm + '" class="link-details" title="DownLoad File"><i class="ion ion-android-open"></i></a>';
+				}
+
+				filteritems += '</figure>';
+				// #endregion figure
+
+				filteritems += '<div class="product-info">';
+				filteritems += '<h4><font color=black>' + value.itmNm + '</font></h4>';
+				filteritems += '<p>' + value.fieldNm + '</p>';
+
+
+				filteritems += '<p><a href="#specModal" id="' + value.itmId + '" class="link-preview" title="Specification" data-toggle="modal" data-target="#specModal"><i class="ion ion-eye"></i></a></p>';
+
+
+				if (!value.tP100100Id) {
+					// filteritems += '<a href="link/sdc112/abc.pdf" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>';
+				} else {
+					filteritems += '<a href="/link/sdc112/' + value.tP100100Id + '" download = "' + value.tP100100Nm + '" class="link-details" title="DownLoad File"><i class="ion ion-android-open"></i></a>';
+				}
+
+				filteritems += '</div>';
+				filteritems += '</div>';
+				filteritems += '</div>';
+
+			});
+			$('#product-filter-items').append(filteritems);
+		});
+
+	}
 
 
 </script>
 
 
-	<body>
-        <input type="hidden" id="langType" name="hiddenClass" th:value="${langType}">
-        <input type="hidden" id="cateNo" name="hiddenClass" th:value="${cateNo}">
-		<!-- <h3><span type="hidden" id="langType-check" th:text="${langType}"></span></h3> -->
+<body>
+	<input type="hidden" id="langType" name="hiddenClass" th:value="${langType}">
+	<input type="hidden" id="cateNo" name="hiddenClass" th:value="${cateNo}">
 
+	<header id="header">
+		<div th:replace="/fragments/menu :: menu"></div>
+	</header>
 
-		<header id="header">
-			<div th:replace="/fragments/menu :: menu"></div>
-		</header>
+	<div th:replace="/fragments/intro :: intro"></div>
 
-		<div th:replace="/fragments/intro :: intro"></div>
+	<main id="main">
+		<div th:replace="/fragments/about :: about"></div>
+		<div th:replace="/fragments/product :: product"></div>
+		<div th:replace="/fragments/searchProduct :: searchProduct"></div>
+		<div th:replace="/fragments/certifications :: certifications"></div>
+		<div th:replace="/fragments/machinesLabs :: machinesLabs"></div>
+		<div th:replace="/fragments/youtube :: youtube"></div>
+		<div th:replace="/fragments/contact :: contact"></div>
 
-		<main id="main">
-			<div th:replace="/fragments/about :: about"></div>
-			<div th:replace="/fragments/product :: product"></div>
-			<div th:replace="/fragments/searchProduct :: searchProduct"></div>
-			<div th:replace="/fragments/certifications :: certifications"></div>
-			<div th:replace="/fragments/machinesLabs :: machinesLabs"></div>
-			<div th:replace="/fragments/youtube :: youtube"></div>
-			<div th:replace="/fragments/contact :: contact"></div>
+	</main>
 
-		</main>
-		
-		<div th:replace="/fragments/footer :: footer"></div>
-		<div th:replace="/fragments/back2top :: back2top"></div>		
+	<div th:replace="/fragments/footer :: footer"></div>
+	<div th:replace="/fragments/back2top :: back2top"></div>
 
-		<!-- Modal -->
-		<div th:replace="/fragments/modal/specificationModal :: specificationModal"></div>
-		<div th:replace="/fragments/modal/historyModal :: historyModal"></div>
-		<div th:replace="/fragments/modal/visionModal :: visionModal"></div>
-		
-	</body>
+	<!-- Modal -->
+	<div th:replace="/fragments/modal/specificationModal :: specificationModal"></div>
+	<div th:replace="/fragments/modal/historyModal :: historyModal"></div>
+	<div th:replace="/fragments/modal/visionModal :: visionModal"></div>
+
+</body>
+
 </html>

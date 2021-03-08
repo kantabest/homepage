@@ -3,8 +3,8 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <script>
-    
-    
+
+
   // function spec_more(itm_id, langType){
   //     var option = "width = 500, height = 500, top = 100, left = 200, location = no"
   //     var url = "/popup/spec_more.jsp?itm_id=" + itm_id + '&langType=' + langType 
@@ -14,65 +14,68 @@
 
 
     // var selectedCateNo = document.getElementById("selectionCateNo");
-     
+
     // select element에서 선택된 option의 value가 저장된다.
 //     var selectValue = selectedCateNo.options[selectedCateNo.selectedIndex].value;
- 
+
 //     // select element에서 선택된 option의 text가 저장된다.
 //     var selectText = selectedCateNo.options[selectedCateNo.selectedIndex].text;
 
-  
+
   // }
 
- 
 
 
-  
+
+
 </script>
 
 <body>
-    <div th:fragment="product">
+  <div th:fragment="product">
 
     <!-- <script th:src="@{/js/top.js}"></script> -->
-    
-      <section id="product"  class="product-section-bg" >
-        <div class="container">
-  
-            <header class="section-header">            
-              <h3><span th:text="${msgMap.get('PRODUCT_Header_Title')}"></span></h3>
-            </header> 
 
-            <div class="row">
-                <h4 class="product-select-title  pr-3"><span th:text="${msgMap.get('PRODUCT_CategorySearch_Title')}"></span></h4>
-                <div class="col-sm-3" >
-                    <span>
-                        <select id="selectCateNo" class="form-control" th:field="*{cate_list}">
-                          <option value=0> -선택- </option>
-                          <option th:each="cateItem : ${cate_list}" th:text="${cateItem.cate_nm}" th:value="${cateItem.cate_no}"></option>
-                        </select>
-                    </span>
-                </div>
-            </div>
-            <br/>
+    <section id="product" class="product-section-bg">
+      <div class="container">
 
-            <div class="row">
-              <div class="col-lg-12">
-                <ul id="product-filters" class="product-filters" >
-                <!-- Ajax is drawing the <li>  -->
+        <header class="section-header">
+          <h3><span th:text="${msgMap.get('PRODUCT_Header_Title')}"></span></h3>
+        </header>
 
-                  
-                </ul>
-              </div>
-            </div>
+        <div class="row">
+          <h4 class="product-select-title  pr-3"><span th:text="${msgMap.get('PRODUCT_CategorySearch_Title')}"></span>
+          </h4>
+          <div class="col-sm-3">
+            <span>
+              <select id="selectCateNo" class="form-control" th:field="*{cate_list}">
+                <option value=0> -선택- </option>
+                <option th:each="cateItem : ${cate_list}" th:text="${cateItem.cate_nm}" th:value="${cateItem.cate_no}">
+                </option>
+              </select>
+            </span>
+          </div>
+        </div>
+        <br />
 
-            <div id="product-filter-items" class="row product-container">
+        <div class="row">
+          <div class="col-lg-12">
+            <ul id="product-filters" class="product-filters">
               <!-- Ajax is drawing the <li>  -->
 
-            </div>
 
-            <!-- Button trigger modal -->
+            </ul>
+          </div>
+        </div>
 
-      </section>
-    </div>
+        <div id="product-filter-items" class="row product-container">
+          <!-- Ajax is drawing the <li>  -->
+
+        </div>
+
+        <!-- Button trigger modal -->
+
+    </section>
+  </div>
 </body>
+
 </html>

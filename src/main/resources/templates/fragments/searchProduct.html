@@ -3,74 +3,80 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <body>
-    <div th:fragment="searchProduct">
+  <div th:fragment="searchProduct">
 
-      <section id="searchProduct" class="search-bg wow fadeInUp">
-        <div class="container">  
-            <header class="section-header">              
-              <br/>
-               <h3><span th:text="${msgMap.get('SearchProduct_Header_Title')}"></span></h3>                            
-            </header> 
-   
-            <div class="card mb-4">
-              <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
-                        <thead>
-                            <tr>
-                              <th class="d-none"><span th:text="${msgMap.get('SEARCH_TABLE_CATE_NO')}"></span></th>
-                              <th><span th:text="${msgMap.get('SEARCH_TABLE_CATE_NM')}"></span></th>
-                              <th><span th:text="${msgMap.get('SEARCH_TABLE_FIELD_NM')}"></span></th>
-                              <th class="d-none"><span th:text="${msgMap.get('SEARCH_TABLE_ITEM_CD')}"></span></th>
-                              <th><span th:text="${msgMap.get('SEARCH_TABLE_ITEM_NM')}"></span></th>
-                              <th class="d-none"><span th:text="${msgMap.get('SEARCH_TABLE_FILE_SIZE')}"></span></th>
-                              <th class="d-none"><span th:text="${msgMap.get('SEARCH_TABLE_CONTENT_TEXT')}"></span></th>
-                              <th><span th:text="${msgMap.get('SEARCH_TABLE_DOWNLOAD')}"></span></th>
-                              <th><span th:text="${msgMap.get('SEARCH_TABLE_PREVIEW')}"></span></th>
-                            </tr>
-                        </thead>
-                        <tfoot>
-                            <tr>
-                              <th class="d-none"><span th:text="${msgMap.get('SEARCH_TABLE_CATE_NO')}"></span></th>
-                              <th><span th:text="${msgMap.get('SEARCH_TABLE_CATE_NM')}"></span></th>
-                              <th><span th:text="${msgMap.get('SEARCH_TABLE_FIELD_NM')}"></span></th>
-                              <th class="d-none"><span th:text="${msgMap.get('SEARCH_TABLE_ITEM_CD')}"></span></th>
-                              <th><span th:text="${msgMap.get('SEARCH_TABLE_ITEM_NM')}"></span></th>
-                              <th class="d-none"><span th:text="${msgMap.get('SEARCH_TABLE_FILE_SIZE')}"></span></th>
-                              <th class="d-none"><span th:text="${msgMap.get('SEARCH_TABLE_CONTENT_TEXT')}"></span></th>
-                              <th><span th:text="${msgMap.get('SEARCH_TABLE_DOWNLOAD')}"></span></th>
-                              <th><span th:text="${msgMap.get('SEARCH_TABLE_PREVIEW')}"></span></th>
-                            </tr>
-                        </tfoot>
-                        <tbody>                    
-                          <tr th:each="file, i:${filesearch_list}" >
-                            <td class="d-none"><span th:text="${file.cate_no}"></span></td>
-                            <td><span th:text="${file.cate_nm}"></span></td>
-                            <td><span th:text="${file.field_nm}"></span></td>
-                            <td class="d-none"><span th:text="${file.itm_cd}"></span></td>
-                            <td><span th:text="${file.itm_nm}"></span></td>
-                            <td class="d-none"><span th:text="${file.file_size}"></span></td>
-                            <td class="d-none"><span th:text="${file.converted_text}"></span></td>
-                            <td><a th:href="@{'/link/sdc112/' + ${file.file_id}}"  th:attr="download=${file.file_nm}" class="link-details" title="DownLoad File">
-                                <i class="ion ion-android-open"></i></a></td>
-                                
+    <section id="searchProduct" class="search-bg wow fadeInUp">
+      <div class="container">
+        <header class="section-header">
+          <br />
+          <h3><span th:text="${msgMap.get('SearchProduct_Header_Title')}"></span></h3>
+        </header>
 
-                                <!-- why don't open new tab by pdf files.  -->
-                            <!-- <td><a th:onclick="|javascript:OpenInNewTab('@{'/link/sdc112/' + ${file.file_id}}')|" class="link-details" title="Preview File" >
-                                <i class="icon ion-ios-paper-outline"></i></a></td>                         -->
+        <div class="card mb-4">
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                  <tr>
+                    <th class="d-none"><span th:text="${msgMap.get('SEARCH_TABLE_CATE_NO')}"></span></th>
+                    <th><span th:text="${msgMap.get('SEARCH_TABLE_CATE_NM')}"></span></th>
+                    <th><span th:text="${msgMap.get('SEARCH_TABLE_FIELD_NM')}"></span></th>
+                    <th class="d-none"><span th:text="${msgMap.get('SEARCH_TABLE_ITEM_CD')}"></span></th>
+                    <th><span th:text="${msgMap.get('SEARCH_TABLE_ITEM_NM')}"></span></th>
+                    <th class="d-none"><span th:text="${msgMap.get('SEARCH_TABLE_FILE_SIZE')}"></span></th>
+                    <th class="d-none"><span th:text="${msgMap.get('SEARCH_TABLE_CONTENT_TEXT')}"></span></th>
+                    <th><span th:text="${msgMap.get('SEARCH_TABLE_DOWNLOAD')}"></span></th>
+                    <th><span th:text="${msgMap.get('SEARCH_TABLE_PREVIEW')}"></span></th>
+                  </tr>
+                </thead>
+                <tfoot>
+                  <tr>
+                    <th class="d-none"><span th:text="${msgMap.get('SEARCH_TABLE_CATE_NO')}"></span></th>
+                    <th><span th:text="${msgMap.get('SEARCH_TABLE_CATE_NM')}"></span></th>
+                    <th><span th:text="${msgMap.get('SEARCH_TABLE_FIELD_NM')}"></span></th>
+                    <th class="d-none"><span th:text="${msgMap.get('SEARCH_TABLE_ITEM_CD')}"></span></th>
+                    <th><span th:text="${msgMap.get('SEARCH_TABLE_ITEM_NM')}"></span></th>
+                    <th class="d-none"><span th:text="${msgMap.get('SEARCH_TABLE_FILE_SIZE')}"></span></th>
+                    <th class="d-none"><span th:text="${msgMap.get('SEARCH_TABLE_CONTENT_TEXT')}"></span></th>
+                    <th><span th:text="${msgMap.get('SEARCH_TABLE_DOWNLOAD')}"></span></th>
+                    <th><span th:text="${msgMap.get('SEARCH_TABLE_PREVIEW')}"></span></th>
+                  </tr>
+                </tfoot>
+                <tbody>
+                  <tr th:each="file, i:${filesearch_list}">
+                    <td class="d-none"><span th:text="${file.cate_no}"></span></td>
+                    <td><span th:text="${file.cate_nm}"></span></td>
+                    <td><span th:text="${file.field_nm}"></span></td>
+                    <td class="d-none"><span th:text="${file.itm_cd}"></span></td>
+                    <td><span th:text="${file.itm_nm}"></span></td>
+                    <td class="d-none"><span th:text="${file.file_size}"></span></td>
+                    <td class="d-none"><span th:text="${file.converted_text}"></span></td>
+                    <td><a th:href="@{'/link/sdc112/' + ${file.file_id}}" th:attr="download=${file.file_nm}"
+                        class="link-details" title="DownLoad File">
+                        <i class="ion ion-android-open"></i></a></td>
 
-                            <td><a id="openNewTab" th:href="@{'/link/sdc112/' + ${file.file_id}}"  th:target="_blank" class="link-details" title="Preview File" >
-                                <i class="icon ion-ios-paper-outline"></i></a></td>                        
-                          </tr>
-                        </tbody>
-                    </table>
-                </div>
-              </div>
+
+                        
+                      <!-- Can not open the new tab in Chrome -->
+                      <!-- Try to open the new tab in IE -->
+                      <!-- I don't know this securation and solution ways. -->
+                    <td><a id="openNewTab" th:href="@{'/link/sdc112/' + ${file.file_id}}" base target="_blank"
+                    class="link-details" title="Preview File">
+                    <i class="icon ion-ios-paper-outline"></i></a></td>                                
+
+
+
+                  </tr>
+                </tbody>
+              </table>
             </div>
-       </div>
-      </section>
-  
-    </div>
-      
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
 </body>
+
 </html>

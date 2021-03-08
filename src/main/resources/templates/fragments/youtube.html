@@ -3,59 +3,64 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <body>
-    <div th:fragment="youtube">
+  <div th:fragment="youtube">
 
-      <section id="youtube"  class="wow fadeIn">
-        <div class="container">
-  
-          <header class="section-header">
-            <h3><span th:text="${msgMap.get('YOUTUBE_Header_Title')}"></span></h3>
-          </header>
-  
-      <!-- Grid row -->
-      <div class="row">      
-        <!-- Grid column -->
-        <div class="col-lg-4 col-md-12 mb-4">      
-          <!--Modal: Name-->
-          <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">      
-              <!--Content-->
-              <div class="modal-content">      
-                <!--Body-->
-                <div class="modal-body mb-0 p-0">      
-                  <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
-                    <iframe width="1280" height="720" src="https://www.youtube.com/embed/qtSVn6GRS38" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <section id="youtube" class="wow fadeIn">
+      <div class="container">
+
+        <header class="section-header">
+          <h3><span th:text="${msgMap.get('YOUTUBE_Header_Title')}"></span></h3>
+        </header>
+
+        <!-- Grid row -->
+        <div class="row">
+          <!-- Grid column -->
+          <div class="col-lg-4 col-md-12 mb-4">
+            <!--Modal: Name-->
+            <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog modal-lg" role="document">
+                <!--Content-->
+                <div class="modal-content">
+                  <!--Body-->
+                  <div class="modal-body mb-0 p-0">
+                    <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+                      <iframe width="1280" height="720" src="https://www.youtube.com/embed/qtSVn6GRS38" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
                       allowfullscreen></iframe>
+                    </div>
+                  </div>
+
+                  <!--Footer-->
+                  <div class="modal-footer justify-content-center">
+                    <span class="mr-4">Welcome to Cals-Corp.com!</span>
+                    <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4"
+                      data-dismiss="modal">Close</button>
                   </div>
                 </div>
-      
-                <!--Footer-->
-                <div class="modal-footer justify-content-center">
-                  <span class="mr-4">Welcome to Cals-Corp.com!</span>
-                  <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">Close</button>
-                </div>
+
+                <!--/.Content-->
+
               </div>
-
-              <!--/.Content-->
-      
             </div>
+            <!--Modal: Name-->
+
+            <a><img class="img-fluid z-depth-1" th:src="@{/img/youtube/video01.png}" alt="video" data-toggle="modal"
+                data-target="#modal1"></a>
+
           </div>
-          <!--Modal: Name-->
-      
-          <a><img class="img-fluid z-depth-1" th:src="@{/img/youtube/video01.png}" alt="video"
-              data-toggle="modal" data-target="#modal1"></a>
-      
+          <!-- Grid column -->
+
+
+
         </div>
-        <!-- Grid column -->
-      
-      
-      
-      </div>
-      <!-- Grid row -->
-      
-      </section>      
+        <!-- Grid row -->
+
+    </section>
 
 
-    </div>
+  </div>
 </body>
+
 </html>
