@@ -588,16 +588,11 @@ body.mobile-nav-active #mobile-nav-toggle {
 .modal-body {
     /* 100% = dialog height, 120px = header + footer */
     overflow-y: scroll;
-    /* /* background-image: url("/img/Logo_CALS.png");
-    background-color: rgba( 255, 255, 255, 0.5 );
-    background-size: cover;
-    background-position: center; */
-    background-repeat: no-repeat; */
-  
-
+    background-image: url("/img/Logo_CALS_Modal.png");    
+    background-size: contain;
+    background-position: center; 
+    background-repeat: no-repeat;
 }
-
-
 
 
 
