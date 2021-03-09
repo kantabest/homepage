@@ -2,39 +2,8 @@
 
 <html xmlns:th="http://www.thymeleaf.org">
 
-<script>
-
-
-  // function spec_more(itm_id, langType){
-  //     var option = "width = 500, height = 500, top = 100, left = 200, location = no"
-  //     var url = "/popup/spec_more.jsp?itm_id=" + itm_id + '&langType=' + langType 
-  //     window.open(url, 'popwin', option);
-  // }
-
-
-
-    // var selectedCateNo = document.getElementById("selectionCateNo");
-
-    // select element에서 선택된 option의 value가 저장된다.
-//     var selectValue = selectedCateNo.options[selectedCateNo.selectedIndex].value;
-
-//     // select element에서 선택된 option의 text가 저장된다.
-//     var selectText = selectedCateNo.options[selectedCateNo.selectedIndex].text;
-
-
-  // }
-
-
-
-
-
-</script>
-
 <body>
   <div th:fragment="product">
-
-    <!-- <script th:src="@{/js/top.js}"></script> -->
-
     <section id="product" class="product-section-bg">
       <div class="container">
 
@@ -49,15 +18,10 @@
             <span>
               <select id="selectCateNo" class="form-control" th:field="*{cate_list}">
                 <div th:switch="${langType}">
-            
-                  <!-- thymeleaf에서는 속성작성중 줄바꿈 일어나면 파싱 못함.
-                  줄바꿈 하지 말 것. 이것때문에 인생 일부 낭비 -->
-                  <option value=0 th:case="EN" th:text="'-Select-'"> -선택- </option>
-                  <option value=0 th:case="CN" th:text="'-选择-'"> -선택- </option>
-                  <option value=0 th:case="*" th:text="'-선택-'"> -선택- </option>
+                  <option value=0 th:case="EN" th:text="-Select-"></option>
+                  <option value=0 th:case="CN" th:text="-选择-"></option>
+                  <option value=0 th:case="*" th:text="-선택-"></option>
                 </div>
-
-
                 
                 <option th:each="cateItem : ${cate_list}" th:text="${cateItem.cate_nm}" th:value="${cateItem.cate_no}">
                 </option>
@@ -71,19 +35,13 @@
           <div class="col-lg-12">
             <ul id="product-filters" class="product-filters">
               <!-- Ajax is drawing the <li>  -->
-
-
             </ul>
           </div>
         </div>
 
         <div id="product-filter-items" class="row product-container">
           <!-- Ajax is drawing the <li>  -->
-
         </div>
-
-        <!-- Button trigger modal -->
-
     </section>
   </div>
 </body>
