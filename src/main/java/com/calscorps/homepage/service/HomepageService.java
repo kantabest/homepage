@@ -1,20 +1,16 @@
-package com.calscorp.homepage.service;
+package com.calscorps.homepage.service;
 
 import java.util.List;
 import java.util.Map;
 
-import com.calscorp.homepage.common.pojo.contact;
-import com.calscorp.homepage.common.pojo.content;
-import com.calscorp.homepage.common.pojo.field;
-import com.calscorp.homepage.common.pojo.fieldItem;
-import com.calscorp.homepage.common.pojo.history;
-import com.calscorp.homepage.common.pojo.specification;
+import com.calscorps.homepage.common.pojo.contact;
+import com.calscorps.homepage.common.pojo.content;
+import com.calscorps.homepage.common.pojo.field;
+import com.calscorps.homepage.common.pojo.fieldItem;
+import com.calscorps.homepage.common.pojo.history;
+import com.calscorps.homepage.common.pojo.specification;
 
-import org.apache.ibatis.annotations.Mapper;
-
-@Mapper
-public interface HomepageMapper {
-    
+public interface HomepageService {
     List<Map<String, String>> selectCateList(String langType);
     List<field> selectFieldList(Map<String, Object> param);
     List<fieldItem> selectFieldItemList(Map<String, Object> param);
@@ -26,5 +22,5 @@ public interface HomepageMapper {
     List<Map<String, String>> selectFooterList(String langType);
     int selectblog_Count(Map<String, String> param);
     List<Map<String, String>> selectFileSearchList(String lantType);
+    
 }
-

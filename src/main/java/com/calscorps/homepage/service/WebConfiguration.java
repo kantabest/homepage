@@ -1,4 +1,4 @@
-package com.calscorp.homepage.service;
+package com.calscorps.homepage.service;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -11,6 +11,8 @@ public class WebConfiguration implements WebMvcConfigurer {
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addRedirectViewController("/", "/views/index/KR");
+        registry.addRedirectViewController("/views", "/views/index/KR");
+        registry.addRedirectViewController("/views", "/views/index/KR");
     }
 
     @Override

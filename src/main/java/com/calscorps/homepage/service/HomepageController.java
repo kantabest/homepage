@@ -1,37 +1,27 @@
-package com.calscorp.homepage.service;
+package com.calscorps.homepage.service;
 
-import java.net.BindException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import com.calscorps.homepage.common.pojo.field;
+import com.calscorps.homepage.common.pojo.fieldItem;
+import com.calscorps.homepage.common.pojo.history;
+import com.calscorps.homepage.common.pojo.specification;
+import com.calscorps.homepage.common.pojo.vision;
 
-import com.calscorp.homepage.common.pojo.field;
-import com.calscorp.homepage.common.pojo.fieldItem;
-import com.calscorp.homepage.common.pojo.history;
-import com.calscorp.homepage.common.pojo.specification;
-import com.calscorp.homepage.common.pojo.vision;
-
-import org.apache.tomcat.util.buf.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.RowCountCallbackHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.view.RedirectView;
 
 @Controller
-
-// @RequestMapping("/views")
+@RequestMapping({"","/"})
 public class HomepageController {
 
     private final HomepageService homepageService;
@@ -42,13 +32,13 @@ public class HomepageController {
         this.homepageService = homepageService;
     }
     
-    @RequestMapping({"/views/index/{langType}"
-                    ,"/views/index/{langType}/{section}"
-                    ,"/views/index/{langType}/{section}/{selectedCateNo}"
+    @RequestMapping({"/views/index"
+                    ,"/views/index/{langType}"
+                    // ,"/views/index/{langType}/{selectedCateNo}"
                     })
+
     public String index(Model model
                         ,@PathVariable Optional<String> langType                        
-                        ,@PathVariable Optional<String> section                        
                         ,@PathVariable Optional<String> selectedCateNo) {
         
 
@@ -56,7 +46,7 @@ public class HomepageController {
         int newCateNo = 1;
         
         if (langType.isPresent()) {
-            newlangType = langType.get();   //returns the id
+            newlangType = langType.get();  
         }
 
         if (selectedCateNo.isPresent()) {
@@ -83,8 +73,7 @@ public class HomepageController {
 
 
         model.addAttribute("langType", newlangType); 
-        model.addAttribute("section", section);
-        model.addAttribute("cateNo", newCateNo );
+        // model.addAttribute("cateNo", newCateNo );
         
         
         model.addAttribute("cate_list", homepageService.selectCateList(newlangType));        
@@ -112,7 +101,7 @@ public class HomepageController {
         model.addAttribute("msgMap", getMessage(newlangType));         
         model.addAttribute("footerList", homepageService.selectFooterList(newlangType));        
 
-        return "views/index";
+        return "/views/index";
     } 
 
     @RequestMapping("/vision/{langType}")

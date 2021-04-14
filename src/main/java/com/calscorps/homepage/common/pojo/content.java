@@ -1,4 +1,4 @@
-package com.calscorp.homepage.common.pojo;
+package com.calscorps.homepage.common.pojo;
 
 import lombok.Getter;
 import lombok.Setter;

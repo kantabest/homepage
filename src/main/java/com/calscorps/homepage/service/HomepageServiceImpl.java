@@ -1,14 +1,14 @@
-package com.calscorp.homepage.service;
+package com.calscorps.homepage.service;
 
 import java.util.List;
 import java.util.Map;
 
-import com.calscorp.homepage.common.pojo.contact;
-import com.calscorp.homepage.common.pojo.content;
-import com.calscorp.homepage.common.pojo.field;
-import com.calscorp.homepage.common.pojo.fieldItem;
-import com.calscorp.homepage.common.pojo.history;
-import com.calscorp.homepage.common.pojo.specification;
+import com.calscorps.homepage.common.pojo.contact;
+import com.calscorps.homepage.common.pojo.content;
+import com.calscorps.homepage.common.pojo.field;
+import com.calscorps.homepage.common.pojo.fieldItem;
+import com.calscorps.homepage.common.pojo.history;
+import com.calscorps.homepage.common.pojo.specification;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

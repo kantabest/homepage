@@ -46,36 +46,39 @@
 </head>
 
 <body>
-	<input type="hidden" id="langType" name="hiddenClass" th:value="${langType}">
-	<input type="hidden" id="cateNo" name="hiddenClass" th:value="${cateNo}">
+
+	 <input type="hidden" id="langType" name="hiddenClass" th:value="${langType}">
+	 <input type="hidden" id="cateNo" name="hiddenClass" th:value="${cateNo}">
 
 	<header id="header">
-		<div th:replace="/fragments/menu :: menu"></div>
+		<div th:replace="fragments/menu :: menu"></div>
 	</header>
 
-	<div th:replace="/fragments/intro :: intro"></div>
+		<div th:replace="fragments/intro :: intro"></div>
 
 	<main id="main">
-		<div th:replace="/fragments/about :: about"></div>
-		<div th:replace="/fragments/product :: product"></div>
-		<div th:replace="/fragments/searchProduct :: searchProduct"></div>
-		<div th:replace="/fragments/certifications :: certifications"></div>
-		<div th:replace="/fragments/machinesLabs :: machinesLabs"></div>
+		<div th:replace="fragments/about :: about"></div>
+		<div th:replace="fragments/product :: product"></div>
+		<div th:replace="fragments/searchProduct :: searchProduct"></div>
+		<div th:replace="fragments/certifications :: certifications"></div>
+		<div th:replace="fragments/machinesLabs :: machinesLabs"></div>
 		
-		<!-- 아리랑 유튜브 동영상 계약 안됨으로 배포 시 닫아야 함. 2021.03.01 -->
-		<!-- <div th:replace="/fragments/youtube :: youtube"></div> -->
-		
-		<div th:replace="/fragments/contact :: contact"></div>
+		<!-- // 아리랑 유튜브 동영상 계약 안됨으로 배포 시 닫아야 함. 2021.03.01  -->
+		<div th:replace="fragments/youtube :: youtube"></div>		
+
+		<div th:replace="fragments/contact :: contact"></div>
 
 	</main>
+	
+	<!-- Modal  -->
+	<div th:replace="fragments/modal/specificationModal :: specificationModal"></div>
+	<div th:replace="fragments/modal/historyModal :: historyModal"></div>
+	<div th:replace="fragments/modal/visionModal :: visionModal"></div>
 
-	<div th:replace="/fragments/footer :: footer"></div>
-	<div th:replace="/fragments/back2top :: back2top"></div>
+	<div th:replace="fragments/footer :: footer"></div>
+	<div th:replace="fragments/back2top :: back2top"></div>
+ 
 
-	<!-- Modal -->
-	<div th:replace="/fragments/modal/specificationModal :: specificationModal"></div>
-	<div th:replace="/fragments/modal/historyModal :: historyModal"></div>
-	<div th:replace="/fragments/modal/visionModal :: visionModal"></div>
 
 </body>
 
