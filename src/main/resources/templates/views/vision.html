@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>CALS Corporation</title>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<meta content="특수그리스, 구리스, 그리스, 윤활유, 특수윤활유, 고온그리스, 내열구리스, 장암칼스, CALS" name="description">
+	<meta content="특수그리스, 구리스, 그리스, 윤활유, 특수윤활유, 고온그리스, 내열구리스, 장암칼스, CALS" name="keywords">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+	<meta property="og:type" content="website"> 
+	<meta property="og:title" content="장암칼스 - CALS Corporation">
+	<meta property="og:description" content="특수그리스, 구리스, 그리스, 윤활유, 특수윤활유, 고온그리스, 내열구리스, 장암칼스, CALS">
+	<meta property="og:image" content="https://cals-corp.com/img/cals_logo/Logo_CALS3.png">
+	<meta property="og:url" content="https://cals-corp.com">  
+
+    <script th:src="@{/js/jquery-3.5.1.min.js}"></script>
+
+	<!-- Table -->	
+	<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+	<script th:src="@{/js/datatables-demo.js}"></script>	  
+	   
+	<link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
+
+
+	<!-- Favicons -->
+	<link th:href="@{/img/favicon-32x32-removebg.png}" rel="icon">
+	<link th:href="@{/img/apple-touch-icon.png}" rel="apple-touch-icon">
+	
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+	
+	<!-- Bootstrap CSS File -->
+	<link th:href="@{/lib/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+	
+	<!-- Libraries CSS Files -->
+	<link th:href="@{/lib/font-awesome/css/font-awesome.min.css}" rel="stylesheet">
+	<link th:href="@{/lib/animate/animate.min.css}" rel="stylesheet">
+	<link th:href="@{/lib/ionicons/css/ionicons.min.css}" rel="stylesheet">
+	<link th:href="@{/lib/owlcarousel/assets/owl.carousel.min.css}" rel="stylesheet">
+	<link th:href="@{/lib/lightbox/css/lightbox.min.css}" rel="stylesheet">
+	
+
+	<!-- Main Stylesheet File -->
+	<link th:href="@{/css/style.css}" rel="stylesheet">
+
+  <!-- =======================================================
+    Theme Name: BizPage
+    Theme URL: https://bootstrapmade.com/bizpage-bootstrap-business-template/
+    Author: BootstrapMade.com
+    License: https://bootstrapmade.com/license/
+  ======================================================= -->
+
+
+</head>
+
+	<body>
+		<header id="header">
+			<div th:replace="/fragments/menu :: menu"></div>
+		</header>
+		
+		<main id="main">
+			<section id="topspace">
+		
+			</section>
+			  
+			
+			<section id="vision">
+			  <div class="container">
+			<br>
+			<br>
+			<br>    
+			<br>
+				<header class="section-header">				  
+				  <h3><span th:text="${msgMap.get('CEO_MENT_Welcome')}"></span></h3>
+
+				  <div th:switch="${langType}">
+					  <p th:case="'EN'" th:text="The most suitable specialty lubricants for your demanding requirements with our best technology"></p>
+					  <p th:case="'CN'" th:text="采用最高技术，提供最佳润滑脂"></p>
+					  <p th:case="*" th:text="최고의 기술로 최적의 윤활제를 공급하겠습니다."></p>
+				</header>
+
+				<!-- <table width="93%" cellpadding="5" cellspacing="0" class="body_01">
+				<!-- <table width="93%" border="0" align="center" cellpadding="5" cellspacing="0" class="body_01"> -->
+					<tr >
+						<td>
+						<!-- <td align="center"> -->
+		<!--         		<img src="img/cals_img/ceo_ment.png" > -->
+		
+		<!-- <font color="black"> -->
+		
+				  <% if (langType.equals("EN")) { %>
+		We, CALS people, are composed of qualified and creative workers<br> 
+		who do their best to give lots of satisfaction and pleasure to our customers through researches<br> 
+		and developments for lubricating technology.<br><br>
+		
+		At November 11, 1980, CALS CORPORATION was established by just 5members, as a small company.<br>
+		Now we are advancing toward the prime company <br>
+		in Korea market producing about 300 kinds of specialty lubricants from our own factory.<br><br>
+		
+		CALS CORPORATION is …<br>
+		
+		<b>1. cultivating the competent and qualified staffs.</b><br><br>
+		<b>2. stepping up to the customers with new technical development.</b><br><br>
+		<b>3. concerning for the protection of natural environment.</b><br><br>
+		
+		In Specialty Lubricant Industry, we are the exporter to 15 countries,<br>
+		including the USA, Japan, U.K., China, Indonesia, etc. as well as the leader of domestic market.<br>
+		Also, our new items by the improved technology will make our prospect bright.<br><br>
+		
+		We'll always rush and go to stand the prime company in global market and we do our best to study<br>
+		and make the best products which our customers are fully satisfied.<br><br>
+		
+				  <% } else if (langType.equals("CN")) { %>
+		我们长岩人，为了研究开发未来润滑脂，为了最大限度的满足广大客户，聚在一起，铸就了美丽洁净的长岩.<br>
+		
+		長岩CALS（株）始建于 1980 年末，最初以 5 人开始，到目前已经具有占地 23,600m2, 建筑面积 4,900m2 的工厂，生产约 300 多种润滑脂，发展成为一家先导国内同行业的领头企业.<br><br>
+		
+		長岩CALS（株）是<br>
+		
+		<b>第一 , 造就最卓越人才的企业；</b><br><br>
+		
+		<b>第二 , 以最新颖的技术开发面向广大客户的企业；</b><br><br>
+		
+		<b>第三 , 对未来的环境负责，热爱自然和环境的企业.</b><br><br>
+		
+		凭着以上三个信念，不仅发展成为特殊润滑脂行业的先导企业，而且实现了向美国和日本等世界 15 个国家出口；目前用新技术积极研发的新产品也有望开创光明的前途。<br>
+		
+		長岩CALS承诺为了成为无愧于世界级的企业而不遗余力的付出，为了达到客户不满率为零而更加不懈地专研，为了推出最卓越品质的产品而努力.<br><br>
+				  <% } else  { %>
+				  우리 장암인은 미래의 윤활에 대한 연구와 개발로서 <br> 
+		고객에게 최대의 만족을 만들어 내는 사람들로 뭉쳐있는 아름답고 깨끗한 기업인들입니다.<br>
+		장암칼스주식회사는 1980년 말에 5인의 자그마한 회사로 출발하여<br> 
+		현재 대지 23,600m², 건평 4,900m²의 공장을 갖추고 약 300여종의 특수 윤활제를 생산해내며 <br>
+		국내의 선두주자로 나아가는 기업입니다.<br><br>
+		
+		<b>첫째, 최고의 인재를 만들어내는 기업입니다.</b><br><br>
+		<b>둘째, 새로운 기술개발로 고객에게 다가서고 있습니다.</b><br><br>
+		<b>셋째, 미래환경을 위하여 책임지고 자연과 환경을 사랑합니다.</b><br><br>
+		
+		위 세가지 정신으로 특수윤활제 업계의 국내 선두 자리는물론, <br>
+		미국과 일본을 비롯하여 세계 15개국에 수출하고 있으며, <br>
+		신기술로 이어지는 새로운 품목들이 앞날을 매우 밝고 만족스럽게 이어가고 있습니다.<br>
+		장암칼스주식회사는 세계속의 기업으로 손색없도록 모두가 노력할 것이며 <br>
+		고객의 불편율이 제로가 될 때까지 연구하여 항상 최고의 제품을 만들 것을 약속 드립니다.<br>
+				  <% } %>
+		
+		
+		
+						</td>
+						</tr>
+				</table>
+
+			</section>
+			
+			
+			
+			
+			
+		
+		  </main>
+
+	<div th:replace="/fragments/footer :: footer"></div>
+	<div th:replace="/fragments/back2top :: back2top"></div>
+	
+
+	</body>
+
+
+</html>

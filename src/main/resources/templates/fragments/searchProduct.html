@@ -26,7 +26,7 @@
                     <th class="d-none"><span th:text="${msgMap.get('SEARCH_TABLE_FILE_SIZE')}"></span></th>
                     <th class="d-none"><span th:text="${msgMap.get('SEARCH_TABLE_CONTENT_TEXT')}"></span></th>
                     <th><span th:text="${msgMap.get('SEARCH_TABLE_DOWNLOAD')}"></span></th>
-                    <th><span th:text="${msgMap.get('SEARCH_TABLE_PREVIEW')}"></span></th>
+                    <!-- <th><span th:text="${msgMap.get('SEARCH_TABLE_PREVIEW')}"></span></th> -->
                   </tr>
                 </thead>
                 <tfoot>
@@ -39,7 +39,7 @@
                     <th class="d-none"><span th:text="${msgMap.get('SEARCH_TABLE_FILE_SIZE')}"></span></th>
                     <th class="d-none"><span th:text="${msgMap.get('SEARCH_TABLE_CONTENT_TEXT')}"></span></th>
                     <th><span th:text="${msgMap.get('SEARCH_TABLE_DOWNLOAD')}"></span></th>
-                    <th><span th:text="${msgMap.get('SEARCH_TABLE_PREVIEW')}"></span></th>
+                    <!-- <th><span th:text="${msgMap.get('SEARCH_TABLE_PREVIEW')}"></span></th> -->
                   </tr>
                 </tfoot>
                 <tbody>
@@ -58,11 +58,14 @@
                       <!-- Can not open the new tab in Chrome -->
                       <!-- Try to open the new tab in IE -->
                       <!-- I don't know this securation and solution ways. -->
-                    <td><a id="openNewTab" th:href="@{'/link/sdc112/' + ${file.file_id}}" base target="_blank"
+                    <!-- <td>
+                      <a id="openNewTab" th:href="@{'/link/sdc112/' + ${file.file_id}}" base th:target="_blank"
                     class="link-details" title="Preview File">
-                    <i class="icon ion-ios-paper-outline"></i></a></td>                                
-
-
+                      <a id="openNewTab" th:onclick="|javascript:goPdfUrl('@{'link/sdc112/' + ${file.file_id}}')|" 
+                    class="link-details" title="Preview File">                    
+                      <a id="openNewTab" th:onclick="|window.open('@{'/link/sdc112/' + ${file.file_id}}', '_blank', 'fullscreen=yes');return false;|" 
+                    class="link-details" title="Preview File">                    
+                    <i class="icon ion-ios-paper-outline"></i></a></td>                                 -->
 
                   </tr>
                 </tbody>

@@ -275,3 +275,8 @@ function ChangeSearchText() {
 		});
 
 	}
+
+	function goPdfUrl(pdfUrl) {
+		// 사용 안함.
+	}
+

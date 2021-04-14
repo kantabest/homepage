@@ -15,6 +15,7 @@ import com.calscorps.homepage.common.pojo.vision;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,6 +33,7 @@ public class HomepageController {
         this.homepageService = homepageService;
     }
     
+
     @RequestMapping({"/views/index"
                     ,"/views/index/{langType}"
                     // ,"/views/index/{langType}/{selectedCateNo}"
@@ -101,7 +103,7 @@ public class HomepageController {
         model.addAttribute("msgMap", getMessage(newlangType));         
         model.addAttribute("footerList", homepageService.selectFooterList(newlangType));        
 
-        return "/views/index";
+        return "views/index";
     } 
 
     @RequestMapping("/vision/{langType}")
