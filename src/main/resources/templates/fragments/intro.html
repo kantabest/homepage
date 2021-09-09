@@ -10,13 +10,23 @@
         ============================-->
         <section id="intro">
             <div class="intro-container">
-                <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
+                <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel" data-interval="false">
 
                     <ol class="carousel-indicators"></ol>
 
                     <div class="carousel-inner" role="listbox">
 
+                        <!-- 아리랑 유튜브 동영상 계약 안됨으로 배포 시 닫아야 함. 2021.03.01 -->
                         <div class="carousel-item active">
+                            <div class="carousel-video-inner">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <iframe class="embed-responsive-item" width="100%" allowfullscreen frameborder="0"                                    
+                                        th:src="@{'https://www.youtube.com/embed/9UGvStbhZWY?controls=0&showinfo=0&rel=1&autoplay=1&mute=1&loop=1&playlist=9UGvStbhZWY'}"></iframe>
+                                </div>
+                            </div>
+                        </div>                        
+                        
+                        <div class="carousel-item">
                             <div class="carousel-background"><img th:src="@{/img/intro/lake.jpg}" alt=""></div>
                             <div class="carousel-container">
                                 <div class="carousel-content">
